@@ -136,17 +136,13 @@ Canonical product truth remains in:
 
 Do not allow polished visual language to silently turn a hypothesis into a decision.
 
-## Known implementation debt
+## Implementation notes
 
-`styles.css` accumulated several override layers during rapid v0.2–v0.5 visual iteration.
+The 2026-10-10 consolidation (D051, D052) moved all foundations into `tokens.css`, self-hosted the typefaces, removed rules for classes no page or script uses and made extrusion a token-driven utility.
 
-The current output is stable, so this baseline deliberately does **not** refactor it.
+Remaining, deliberately kept: media-query overrides that recompose layouts, and `!important` only for reduced-motion, Executive/Nerd mode switching and a few specificity guards.
 
-Before adding another substantial visual feature:
-
-1. consolidate the stylesheet into canonical sections,
-2. remove superseded selectors and media-query overrides,
-3. re-run visual/mobile regression checks.
+Before a substantial visual feature, run `validate-site.mjs`, the three diagram QA scripts and a light/dark, desktop/phone render check.
 
 Do not append another version-specific CSS layer first.
 
