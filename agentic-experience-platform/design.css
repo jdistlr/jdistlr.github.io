@@ -1,0 +1,799 @@
+/* Grammar specimen — page-specific composition. Token values only. */
+
+.specimen-nav {
+  gap: var(--space-5);
+}
+
+.specimen-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--muted);
+  font-size: var(--text-sm);
+  text-decoration: none;
+}
+
+.specimen-nav a:hover,
+.specimen-nav a[aria-current="page"] {
+  color: var(--text);
+}
+
+.specimen-nav a[aria-current="page"] {
+  font-weight: 650;
+}
+
+.specimen-source {
+  margin-top: var(--space-6);
+  color: var(--muted);
+  font: var(--text-xs) var(--mono);
+  letter-spacing: var(--track-mono);
+}
+
+.specimen-page code {
+  font-family: var(--mono);
+  font-size: .92em;
+  letter-spacing: var(--track-mono);
+}
+
+.specimen-page kbd {
+  padding: 1px var(--space-1);
+  border: 1px solid var(--border-strong);
+  border-radius: 5px;
+  background: var(--surface-strong);
+  font: var(--text-2xs) var(--mono);
+}
+
+.specimen-gap {
+  margin-top: var(--space-5);
+}
+
+/* 01 · faces */
+
+.specimen-faces {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-5);
+  margin-top: var(--space-7);
+}
+
+.specimen-face {
+  display: grid;
+  gap: var(--space-4);
+  margin: 0;
+  padding: var(--space-6);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+
+.specimen-face-glyph {
+  font-size: var(--display-1);
+  font-weight: 750;
+  line-height: var(--leading-display);
+  letter-spacing: var(--track-display);
+}
+
+.specimen-face.is-mono .specimen-face-glyph {
+  color: var(--lilac-ink);
+  font-family: var(--mono);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.specimen-face figcaption {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.specimen-face figcaption strong {
+  font-size: var(--text-xl);
+  letter-spacing: var(--track-title);
+}
+
+.specimen-face figcaption code {
+  color: var(--lilac-ink);
+  font-size: var(--text-xs);
+}
+
+.specimen-face figcaption span {
+  color: var(--muted);
+  font-size: var(--text-md);
+}
+
+.specimen-weights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-5);
+  margin: 0;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border);
+  font-size: var(--text-body);
+}
+
+.specimen-face.is-mono .specimen-weights {
+  font-family: var(--mono);
+  font-size: var(--text-sm);
+}
+
+/* 02 · scale */
+
+.specimen-scale {
+  display: grid;
+}
+
+.specimen-row {
+  display: grid;
+  grid-template-columns: 150px 220px 64px minmax(0, 1fr);
+  gap: var(--space-5);
+  align-items: baseline;
+  padding: var(--space-4) var(--space-5);
+  border-top: 1px solid var(--border);
+}
+
+.specimen-row:first-child {
+  border-top: 0;
+}
+
+.specimen-scale.is-text .specimen-row {
+  grid-template-columns: 150px 64px minmax(0, 1fr);
+}
+
+.specimen-row > code {
+  color: var(--lilac-ink);
+  font-size: var(--text-xs);
+}
+
+.specimen-declared,
+.specimen-px {
+  color: var(--muted);
+  font: var(--text-2xs) var(--mono);
+  letter-spacing: var(--track-mono);
+}
+
+.specimen-sample {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.specimen-sample.is-display {
+  font-weight: 750;
+  line-height: var(--leading-display);
+  letter-spacing: var(--track-display);
+}
+
+.specimen-sample.is-heading {
+  font-weight: 700;
+  line-height: var(--leading-heading);
+  letter-spacing: var(--track-heading);
+}
+
+.specimen-sample.is-statement {
+  font-weight: 720;
+  letter-spacing: var(--track-statement);
+}
+
+.specimen-sample.is-title {
+  font-weight: 650;
+  letter-spacing: var(--track-title);
+}
+
+.specimen-sample.is-lead {
+  color: var(--muted);
+}
+
+.specimen-sample.is-mono {
+  color: var(--muted);
+  font-family: var(--mono);
+  letter-spacing: var(--track-mono);
+}
+
+.specimen-sample.is-label {
+  text-transform: uppercase;
+  letter-spacing: var(--track-label);
+}
+
+/* 03 · color */
+
+.specimen-swatches {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-5) var(--space-4);
+  margin-top: var(--space-7);
+}
+
+.specimen-swatch {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+}
+
+.specimen-swatch i {
+  display: block;
+  height: 84px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.specimen-swatch figcaption {
+  display: grid;
+  gap: 2px;
+}
+
+.specimen-swatch code {
+  font-size: var(--text-xs);
+  font-weight: 700;
+}
+
+.specimen-swatch.is-accent code {
+  color: var(--lilac-ink);
+}
+
+.specimen-swatch span {
+  color: var(--muted);
+  font-size: var(--text-sm);
+}
+
+.specimen-swatch small,
+.specimen-swatch .specimen-value {
+  color: var(--muted);
+  font: var(--text-2xs) var(--mono);
+  letter-spacing: var(--track-mono);
+}
+
+.specimen-swatch small::before {
+  content: "← ";
+}
+
+/* 04 · surfaces */
+
+.specimen-ladder {
+  margin-top: var(--space-7);
+}
+
+.ladder-level {
+  display: grid;
+  gap: var(--space-4);
+  padding: var(--space-5);
+}
+
+.ladder-level > code {
+  color: var(--muted);
+  font-size: var(--text-2xs);
+}
+
+.ladder-level.is-page {
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-lg);
+  background: var(--bg);
+}
+
+.ladder-level.is-section {
+  padding-block: var(--space-6);
+  border-block: 1px solid var(--border);
+}
+
+.ladder-level.is-panel {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+
+.ladder-nodes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.ladder-node {
+  display: inline-grid;
+  gap: 2px;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface-strong);
+  color: var(--muted);
+  font: var(--text-2xs) var(--mono);
+}
+
+.ladder-node:last-child {
+  border-radius: var(--radius-pill);
+}
+
+.ladder-node code {
+  color: var(--text);
+  font: 650 var(--text-md) var(--sans);
+  letter-spacing: var(--track-snug);
+}
+
+/* 05 · states */
+
+.specimen-states {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-5);
+  margin-top: var(--space-7);
+}
+
+.state-card {
+  display: grid;
+  align-content: start;
+  gap: var(--space-2);
+}
+
+.state-card h3 {
+  margin: var(--space-3) 0 0;
+  font-size: var(--text-xl);
+}
+
+.state-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: var(--text-md);
+}
+
+.state-demo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 112px;
+  padding: var(--space-5);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+
+.state-demo span {
+  display: inline-grid;
+  gap: 2px;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  background: var(--surface-strong);
+  font-size: var(--text-md);
+  font-weight: 650;
+}
+
+.state-demo small {
+  color: inherit;
+  font: 700 var(--text-2xs) var(--mono);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  opacity: .8;
+}
+
+.is-emphasis .state-demo span {
+  border-color: var(--lilac);
+  color: var(--lilac-ink);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--lilac) 14%, transparent);
+}
+
+.is-hypothesis .state-demo span {
+  border-color: var(--lilac);
+  border-radius: var(--radius-pill);
+  background: var(--lilac-soft);
+  font-weight: 500;
+}
+
+.is-later .state-demo span {
+  border-style: dashed;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.is-trust .state-demo {
+  gap: var(--space-4);
+  border-style: dashed;
+  border-color: var(--border-strong);
+}
+
+.is-trust .state-demo span {
+  font: var(--text-xs) var(--mono);
+}
+
+.is-borrowed .state-demo span {
+  border-color: var(--border);
+  background: var(--accent-soft);
+  color: var(--muted);
+}
+
+/* 06 · diagram vocabulary */
+
+.specimen-vocab {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: var(--space-5);
+}
+
+.v-edge {
+  fill: none;
+  stroke: var(--muted);
+  stroke-width: 1.4;
+}
+
+.v-edge.is-accent {
+  stroke: var(--lilac);
+}
+
+.v-edge.is-later {
+  stroke-dasharray: 6 6;
+  opacity: .7;
+}
+
+.v-head {
+  fill: var(--muted);
+}
+
+.v-head-accent {
+  fill: var(--lilac);
+}
+
+.v-label {
+  fill: var(--muted);
+  font: 14px var(--mono);
+}
+
+.v-label.is-accent {
+  fill: var(--lilac-ink);
+}
+
+.v-decision {
+  fill: var(--surface);
+  stroke: var(--border-strong);
+  stroke-width: 1.4;
+}
+
+.v-node {
+  fill: var(--surface-strong);
+  stroke: var(--border-strong);
+  stroke-width: 1.4;
+}
+
+.v-node-text {
+  fill: var(--text);
+  font: 650 17px var(--sans);
+}
+
+.v-node-text.is-small {
+  font: 14px var(--mono);
+}
+
+.v-boundary {
+  fill: none;
+  stroke: var(--border-strong);
+  stroke-dasharray: 4 5;
+}
+
+/* 07 · space, radius, motion */
+
+.specimen-space {
+  display: grid;
+  gap: var(--space-2);
+  margin-top: var(--space-7);
+}
+
+.space-row {
+  display: grid;
+  grid-template-columns: 110px 64px minmax(0, 1fr);
+  gap: var(--space-4);
+  align-items: center;
+}
+
+.space-row code {
+  color: var(--lilac-ink);
+  font-size: var(--text-xs);
+}
+
+.space-row i {
+  display: block;
+  max-width: 100%;
+  height: 12px;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--lilac) 55%, transparent);
+}
+
+.space-row.is-rhythm i {
+  background: color-mix(in srgb, var(--lilac) 25%, transparent);
+  outline: 1px dashed var(--lilac);
+}
+
+.specimen-tokens {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-7);
+  margin-top: var(--space-8);
+}
+
+.token-group h3 {
+  margin-bottom: var(--space-4);
+  font-size: var(--text-xl);
+}
+
+.radius-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.radius-sample {
+  display: inline-flex;
+  align-items: flex-end;
+  width: 132px;
+  white-space: nowrap;
+  height: 72px;
+  padding: var(--space-3);
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--muted);
+  font-size: var(--text-2xs);
+}
+
+.motion-demo {
+  display: grid;
+  gap: var(--space-3);
+  width: 100%;
+  min-height: 44px;
+  padding: var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  color: var(--muted);
+  font: var(--text-sm) var(--sans);
+  text-align: left;
+  cursor: pointer;
+}
+
+.motion-demo:focus-visible {
+  outline: 2px solid var(--lilac);
+  outline-offset: 2px;
+}
+
+.motion-track {
+  position: relative;
+  display: block;
+  height: 14px;
+  border-radius: var(--radius-pill);
+  background: var(--accent-soft);
+}
+
+.motion-track i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--lilac);
+  transition: left var(--duration-slow) var(--ease-emphasis);
+}
+
+.motion-demo[aria-pressed="true"] .motion-track i {
+  left: calc(100% - 14px);
+}
+
+.motion-list {
+  display: grid;
+  gap: var(--space-1);
+  margin: var(--space-4) 0 0;
+}
+
+.motion-list div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding-block: var(--space-1);
+  border-bottom: 1px solid var(--border);
+}
+
+.motion-list dt code {
+  color: var(--lilac-ink);
+  font-size: var(--text-xs);
+}
+
+.motion-list dd {
+  margin: 0;
+  color: var(--muted);
+  font: var(--text-2xs) var(--mono);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-track i {
+    transition: none;
+  }
+}
+
+/* Recomposition */
+
+@media (max-width: 900px) {
+  .specimen-row {
+    grid-template-columns: 130px 64px minmax(0, 1fr);
+  }
+
+  .specimen-declared {
+    display: none;
+  }
+
+  .specimen-states {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .specimen-swatches {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .specimen-nav {
+    gap: var(--space-3);
+  }
+
+  .specimen-faces,
+  .specimen-states,
+  .specimen-tokens {
+    grid-template-columns: 1fr;
+  }
+
+  .specimen-face {
+    padding: var(--space-5);
+  }
+
+  .specimen-row,
+  .specimen-scale.is-text .specimen-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: var(--space-1) var(--space-3);
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .specimen-row .specimen-sample {
+    grid-column: 1 / -1;
+    white-space: normal;
+  }
+
+  .specimen-swatches {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .specimen-swatch i {
+    height: 64px;
+  }
+
+  .ladder-level {
+    padding: var(--space-4);
+  }
+
+  .space-row {
+    grid-template-columns: 90px 52px minmax(0, 1fr);
+    gap: var(--space-3);
+  }
+
+  /* Independent primitives: panning keeps labels readable without
+     fragmenting any relationship. */
+  .specimen-vocab {
+    min-width: 920px;
+    padding: var(--space-3);
+  }
+}
+
+.radius-sample code {
+  font-size: var(--text-2xs);
+}
+
+/* Only the vocabulary panel scrolls; the type panels recompose instead. */
+.diagram-panel:not(.diagram-scroll) .diagram-panel-head small::before {
+  content: none;
+}
+
+/* 05b · extrusion */
+
+.specimen-extrusion {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 2fr);
+  gap: var(--space-7);
+  align-items: center;
+  margin-top: var(--space-8);
+  padding-top: var(--space-7);
+  border-top: 1px solid var(--border);
+}
+
+.extrusion-copy h3 {
+  margin: var(--space-2) 0 var(--space-3);
+  font-size: var(--heading-1);
+  letter-spacing: var(--track-title);
+}
+
+.extrusion-copy p {
+  margin: 0;
+  color: var(--muted);
+  font-size: var(--text-md);
+}
+
+.extrusion-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+
+.extrusion-item {
+  display: grid;
+  gap: var(--space-4);
+  margin: 0;
+}
+
+.extrusion-node {
+  display: grid;
+  gap: var(--space-1);
+  min-height: 96px;
+  align-content: center;
+  padding: var(--space-4);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  background: var(--surface-strong);
+}
+
+.extrusion-node small {
+  color: var(--muted);
+  font: 700 var(--text-2xs) var(--mono);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+}
+
+.extrusion-node strong {
+  font-size: var(--text-md);
+  letter-spacing: var(--track-snug);
+}
+
+.extrusion-node.is-own {
+  border-color: color-mix(in srgb, var(--lilac) 52%, var(--border));
+  background: var(--own-surface);
+}
+
+.extrusion-node.is-adapt {
+  border-color: color-mix(in srgb, var(--lilac) 28%, var(--border));
+  background: var(--adapt-surface);
+}
+
+.extrusion-node.is-borrow {
+  border-color: var(--border);
+  background: var(--borrow-surface);
+}
+
+.extrusion-node.is-flat {
+  border-color: var(--border-strong);
+  background: var(--surface);
+}
+
+.extrusion-item figcaption {
+  display: grid;
+  gap: 2px;
+}
+
+.extrusion-item figcaption code {
+  color: var(--lilac-ink);
+  font-size: var(--text-xs);
+}
+
+.extrusion-item figcaption span {
+  color: var(--muted);
+  font: var(--text-2xs) var(--mono);
+}
+
+@media (max-width: 900px) {
+  .specimen-extrusion {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+}
+
+@media (max-width: 640px) {
+  .extrusion-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-5) var(--space-4);
+  }
+}

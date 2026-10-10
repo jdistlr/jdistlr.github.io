@@ -1,0 +1,231 @@
+/*
+ * Design tokens — the foundations of the Experience Design Language as code.
+ *
+ * Source of meaning: design/EXPERIENCE-DESIGN-LANGUAGE.md
+ * Loaded before every page stylesheet; nothing else may define :root tokens.
+ *
+ * Three tiers:
+ *   1. primitives  raw ramps (warm neutrals, graphite, lilac, type, space, motion)
+ *   2. semantic    roles the grammar talks about (bg, surface, muted, accent …)
+ *   3. usage       page CSS consumes tier 2 (and tier 1 scales) — never raw values
+ *
+ * Canonical breakpoints (custom properties cannot be read inside @media):
+ *   compact  ≤ 640px   phone recomposition
+ *   medium   ≤ 900px   tablet / narrow desktop
+ *   wide     ≤ 1100px  diagram canvas narrows
+ */
+
+/* ── Typefaces · self-hosted, no third-party font CDN ───────────────────── */
+
+@font-face {
+  font-family: "Inter";
+  src: url("./fonts/InterVariable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("./fonts/JetBrainsMono-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("./fonts/JetBrainsMono-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ── 1 · Primitives ────────────────────────────────────────────────── */
+
+  /* warm neutral ramp */
+  --warm-0: #ffffff;
+  --warm-50: #fbfaf6;
+  --warm-100: #f4f2ec;
+  --warm-200: #e9e6de;
+  --warm-300: #d8d5cd;
+  --warm-400: #bcb8ae;
+  --warm-600: #686862;
+
+  /* graphite */
+  --graphite-900: #161616;
+  --graphite-950: #171717;
+
+  /* lilac — the single accent family */
+  --lilac-100: #ece8fb;
+  --lilac-400: #8d78e8;
+  --lilac-600: #6955c4;
+
+  --green-700: #276749;
+
+  /* type families */
+  --sans: "Inter", ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+
+  /* text scale · fixed steps for UI, labels and body copy.
+     11px is the floor: annotations stay mono, never microscopic. */
+  --text-2xs: 11px;
+  --text-xs: 12px;
+  --text-sm: 13px;
+  --text-md: 14px;
+  --text-base: 15px;
+  --text-body: 16px;
+  --text-lg: 17px;
+  --text-xl: 19px;
+  --text-2xl: 22px;
+  --text-3xl: 24px;
+
+  /* display scale · fluid editorial headings */
+  --display-0: clamp(58px, 9vw, 118px);        /* playful exception: nerdy hero */
+  --display-1: clamp(54px, 8vw, 108px);        /* page hero */
+  --display-2: clamp(34px, 4vw, 58px);         /* section statement */
+  --display-3: clamp(30px, 3.7vw, 48px);       /* sub-section statement */
+  --display-4: clamp(24px, 3vw, 42px);         /* thesis / verdict line */
+  --heading-1: clamp(20px, 2.3vw, 28px);       /* panel title */
+  --heading-2: clamp(18px, 2vw, 24px);         /* lead / strong label */
+
+  --display-0-compact: clamp(52px, 15vw, 78px);
+  --display-1-compact: clamp(46px, 14vw, 66px);
+  --display-2-compact: clamp(32px, 10vw, 44px);
+
+  /* line height + tracking */
+  --leading-display: .91;
+  --leading-heading: .98;
+  --leading-tight: 1.2;
+  --leading-body: 1.5;
+  --leading-relaxed: 1.6;
+
+  --track-display: -0.05em;         /* tuned for Inter Display optical size */
+  --track-heading: -0.035em;
+  --track-statement: -0.03em;
+  --track-title: -0.025em;
+  --track-snug: -0.02em;
+  --track-body: -0.01em;
+  --track-mono: .02em;
+  --track-label-tight: .06em;
+  --track-label: .08em;
+  --track-label-wide: .12em;
+
+  /* space scale · 4px base */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  /* radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-pill: 999px;
+
+  /* motion · short, eased, reversible */
+  --ease-standard: ease;
+  --ease-emphasis: cubic-bezier(.22, .7, .2, 1);
+  --duration-fast: 180ms;
+  --duration-base: 240ms;
+  --duration-slow: 420ms;
+
+  /* extrusion · the side face of an isometric slab, flattened to 2.5D.
+     Depth encodes ownership, never decoration (see design language §6). */
+  --extrude-own: 6px;
+  --extrude-adapt: 3px;
+  --extrude-borrow: 2px;
+  --extrude-rise: 2px;                         /* hover lift on top of the base depth */
+  --extrude-ratio: 1.15;                       /* y : x, matches the isometric stack */
+
+  /* ── 2 · Semantic roles ────────────────────────────────────────────── */
+
+  --bg: var(--warm-100);
+  --surface: var(--warm-50);
+  --surface-strong: var(--warm-0);
+  --text: var(--graphite-900);
+  --muted: var(--warm-600);
+  --border: var(--warm-300);
+  --border-strong: var(--warm-400);
+  --accent: var(--graphite-950);
+  --accent-soft: var(--warm-200);
+  --lilac: var(--lilac-400);
+  --lilac-soft: var(--lilac-100);
+  --lilac-ink: var(--lilac-600);
+  --success: var(--green-700);
+
+  /* ownership families · top surface and side face
+     Own = product meaning · Adapt = environment seam · Borrow = commodity machinery */
+  --own-surface: color-mix(in srgb, var(--lilac-soft) 76%, var(--surface));
+  --own-side: color-mix(in srgb, var(--lilac) 28%, var(--surface));
+  --adapt-surface: color-mix(in srgb, var(--surface-strong) 86%, var(--lilac-soft));
+  --adapt-side: color-mix(in srgb, var(--lilac) 14%, var(--surface));
+  --borrow-surface: color-mix(in srgb, var(--accent-soft) 68%, var(--surface));
+  --borrow-side: color-mix(in srgb, var(--border-strong) 34%, var(--surface));
+
+  /* layout */
+  --radius: var(--radius-lg);
+  --max: 1180px;
+  --gutter: 20px;                              /* inline page margin, each side */
+  --space: clamp(64px, 7.5vw, 112px);          /* section rhythm, top and bottom */
+  --stack-gap: var(--space-5);                 /* default gap between siblings */
+}
+
+@media (min-width: 641px) {
+  :root {
+    --gutter: 24px;
+  }
+}
+
+/* Dark mode preserves hierarchy rather than inverting it:
+   deep warm neutrals, lifted surfaces, lilac lighter and calmer. */
+:root {
+  --night-0: #11110f;
+  --night-50: #171714;
+  --night-100: #1e1e1a;
+  --night-200: #24231f;
+  --night-300: #34332e;
+  --night-400: #4b4942;
+  --night-600: #a5a198;
+  --night-ink: #f0eee7;
+  --night-lilac-100: #29243a;
+  --night-lilac-400: #a895f3;
+  --night-lilac-600: #b7a8f5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: var(--night-0);
+    --surface: var(--night-50);
+    --surface-strong: var(--night-100);
+    --text: var(--night-ink);
+    --muted: var(--night-600);
+    --border: var(--night-300);
+    --border-strong: var(--night-400);
+    --accent-soft: var(--night-200);
+    --lilac: var(--night-lilac-400);
+    --lilac-soft: var(--night-lilac-100);
+    --lilac-ink: var(--night-lilac-600);
+
+    /* side faces sink toward the page, never glow */
+    --own-surface: color-mix(in srgb, var(--lilac) 18%, var(--surface));
+    --own-side: color-mix(in srgb, var(--lilac) 24%, var(--night-0));
+    --adapt-surface: color-mix(in srgb, var(--lilac) 9%, var(--surface-strong));
+    --adapt-side: color-mix(in srgb, var(--lilac) 16%, var(--night-0));
+    --borrow-surface: color-mix(in srgb, var(--surface-strong) 80%, var(--night-0));
+    --borrow-side: color-mix(in srgb, var(--border-strong) 46%, var(--night-0));
+  }
+}
+
+/* --extrude is registered so depth can transition (hover lift, press). */
+@property --extrude {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}

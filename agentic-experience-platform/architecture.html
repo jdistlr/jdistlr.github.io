@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Reference Architecture — Agentic Experience Platform</title>
+  <meta
+    name="description"
+    content="The provisional reference architecture for the Agentic Experience Platform: own the contract, borrow the machinery."
+  />
+  <link rel="preload" href="./fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="./tokens.css?v=0d04f2d07362" />
+  <link rel="stylesheet" href="./styles.css?v=0d04f2d07362" />
+  <link rel="stylesheet" href="./architecture.css?v=0d04f2d07362" />
+  <meta name="aep-build" content="0d04f2d07362" />
+</head>
+<body class="architecture-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <a class="brand architecture-brand" href="./index.html" aria-label="Agentic Experience Platform overview">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-full">Agentic Experience Platform</span><abbr class="brand-compact" title="Agentic Experience Platform">AEP</abbr>
+    </a>
+
+    <nav class="topbar-actions architecture-nav" aria-label="Architecture view controls">
+      <a class="architecture-nav-link" href="./index.html">Overview</a>
+      <span class="architecture-nav-current" aria-current="page">Architecture</span>
+      <button class="mode-toggle" id="depthToggle" type="button" aria-pressed="false">
+        <span class="mode-dot" aria-hidden="true"></span>
+        <span id="depthLabel">Executive</span>
+      </button>
+      <div class="language-rail" role="group" aria-label="Language">
+        <button class="language-option" type="button" data-language="de" aria-pressed="false" aria-label="Deutsch">DE</button>
+        <span class="language-divider" aria-hidden="true"></span>
+        <button class="language-option" type="button" data-language="en" aria-pressed="true" aria-label="English">EN</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="section-shell architecture-hero">
+      <div class="architecture-hero-copy">
+        <div class="eyebrow">Reference architecture · v0.1.1</div>
+        <h1 class="architecture-title">Own the contract.<br /><span>Borrow the machinery.</span></h1>
+        <p class="hero-lead">
+          A thin internal publishing lane for deployable web experiences.
+        </p>
+        <div class="architecture-status">
+          <span class="architecture-status-dot" aria-hidden="true"></span>
+          Logical model provisional · local baseline accepted
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell architecture-map-section" id="architecture">
+      <div class="architecture-map-heading">
+        <div>
+          <div class="eyebrow">Logical architecture</div>
+          <h2>One owned seam.<br /><span>Commodity machinery around it.</span></h2>
+        </div>
+        <p>
+          Responsibilities are separated so product meaning stays stable while infrastructure remains replaceable.
+        </p>
+      </div>
+
+      <figure class="architecture-figure">
+        <div class="architecture-figure-head">
+          <span>Responsibility stack</span>
+          <small><span class="architecture-wide-hint">not deployment topology</span><span class="architecture-swipe-hint">mobile composition</span></small>
+        </div>
+
+        <div class="architecture-mobile-view-switch" id="mobileArchitectureView" role="group" aria-label="Architecture view">
+          <span>View</span>
+          <div>
+            <button type="button" id="mobileArchitectureLinear" aria-controls="architectureMobile architectureScroll" aria-pressed="true">Linear</button>
+            <button type="button" id="mobileArchitectureSpatial" aria-controls="architectureMobile architectureScroll" aria-pressed="false">Spatial</button>
+          </div>
+        </div>
+        <div class="architecture-mobile-spatial-hint" id="mobileSpatialHint" hidden>Pan to inspect the full stack · pinch to zoom</div>
+
+        <div class="stack-controls" id="stackControls" hidden><span>Inspect the platform</span><div><button type="button" id="stackAssemble" aria-controls="architectureScroll" aria-pressed="false">Assemble</button><button type="button" id="stackExpand" aria-controls="architectureScroll" aria-pressed="true">Expand layers</button></div></div>
+        <div class="architecture-canvas-scroll" id="architectureScroll">
+          <svg class="architecture-canvas architecture-stack" viewBox="0 0 1280 910" role="img" aria-labelledby="architectureSvgTitle architectureSvgDescription"><title id="architectureSvgTitle">Reference architecture responsibility stack</title><desc id="architectureSvgDescription">Five shared-footprint levels: Publish Contract, Control Plane, peer Identity / Policy and Delivery adapters, Artifact Store, Experience Edge. The stack groups responsibilities; explicit dependency paths below distinguish actual relationships from spatial order. Raised surface details create tactile semantic zones, and one representative Sparklet trace demonstrates the publish-to-edge path without replacing the dependency map below.</desc><text class="architecture-side-title stack-context" x="48" y="88">Clients</text><g class="stack-context"><g class="architecture-client"><rect x="48" y="114" width="180" height="46" rx="10"></rect><text x="66" y="143">Human</text></g><g class="architecture-client"><rect x="48" y="176" width="180" height="46" rx="10"></rect><text x="66" y="205">Agent</text></g><g class="architecture-client"><rect x="48" y="238" width="180" height="46" rx="10"></rect><text x="66" y="267">CLI</text></g><g class="architecture-client"><rect x="48" y="300" width="180" height="46" rx="10"></rect><text x="66" y="329">Portal</text></g></g><text x="330" y="36" class="architecture-side-title">One platform · five responsibility levels</text><g data-exploded data-origin="530 610" data-gap="120"><g class="iso-module iso-borrow" data-part="edge" data-rect="0 0 200 200" data-z="0" data-t="26" style="--stack-close:0px" data-level="0" data-center="530 710" data-width="400"><polygon class="iso-top" points="330,710 530,610 730,710 530,810"></polygon><polygon class="iso-left" points="330,710 530,810 530,836 330,736"></polygon><polygon class="iso-right" points="530,810 730,710 730,736 530,836"></polygon><g class="stack-surface-rim"><polygon class="stack-rim" points="350,709.2 530,619.2 710,709.2 530,799.2"></polygon></g><g class="stack-surface-details" data-detail="edge"><polygon class="stack-detail-side stack-detail-side-left origin-well" points="378,706 428,731 428,735 378,710"></polygon><polygon class="stack-detail-side stack-detail-side-right origin-well" points="428,731 478,706 478,710 428,735"></polygon><polygon class="stack-detail stack-detail-top origin-well" points="378,706 428,681 478,706 428,731"></polygon><polygon class="stack-detail origin-interior sparklet-home" points="396,705 428,689 460,705 428,721"></polygon><polygon class="stack-detail-side stack-detail-side-left origin-well" points="460,719 510,744 510,748 460,723"></polygon><polygon class="stack-detail-side stack-detail-side-right origin-well" points="510,744 560,719 560,723 510,748"></polygon><polygon class="stack-detail stack-detail-top origin-well" points="460,719 510,694 560,719 510,744"></polygon><polygon class="stack-detail origin-interior" points="478,718 510,702 542,718 510,734"></polygon><polygon class="stack-detail-side stack-detail-side-left origin-well" points="542,732 592,757 592,761 542,736"></polygon><polygon class="stack-detail-side stack-detail-side-right origin-well" points="592,757 642,732 642,736 592,761"></polygon><polygon class="stack-detail stack-detail-top origin-well" points="542,732 592,707 642,732 592,757"></polygon><polygon class="stack-detail origin-interior" points="560,731 592,715 624,731 592,747"></polygon></g><g class="stack-label"><circle cx="730" cy="720" r="2"></circle><path d="M736 720 H784"></path><text x="800" y="694" class="stack-owner">BORROW / ADAPT</text><text x="800" y="719" class="stack-name">Experience Edge</text><text x="800" y="741" class="stack-note">routing · protection · origin isolation</text></g></g><g class="iso-module iso-borrow" data-part="store" data-rect="0 0 200 200" data-z="140" data-t="18" style="--stack-close:120px" data-level="1" data-center="530 570" data-width="400"><polygon class="iso-top" points="330,570 530,470 730,570 530,670"></polygon><polygon class="iso-left" points="330,570 530,670 530,688 330,588"></polygon><polygon class="iso-right" points="530,670 730,570 730,588 530,688"></polygon><g class="stack-surface-rim"><polygon class="stack-rim" points="350,569.2 530,479.2 710,569.2 530,659.2"></polygon></g><g class="stack-surface-details" data-detail="store"><polygon class="stack-detail-side stack-detail-side-left artifact" points="370,569 416,592 416,599 370,576"></polygon><polygon class="stack-detail-side stack-detail-side-right artifact" points="416,592 476,562 476,569 416,599"></polygon><polygon class="stack-detail stack-detail-top artifact" points="370,569 430,539 476,562 416,592"></polygon><path class="stack-detail-line artifact-line" d="M420 553 L445 565.5"></path><path class="stack-detail-line artifact-line" d="M406 560 L423 568.5"></path><polygon class="stack-detail-side stack-detail-side-left artifact" points="450,581 496,604 496,611 450,588"></polygon><polygon class="stack-detail-side stack-detail-side-right artifact" points="496,604 556,574 556,581 496,611"></polygon><polygon class="stack-detail stack-detail-top artifact" points="450,581 510,551 556,574 496,604"></polygon><path class="stack-detail-line artifact-line" d="M500 565 L525 577.5"></path><path class="stack-detail-line artifact-line" d="M486 572 L503 580.5"></path><polygon class="stack-detail-side stack-detail-side-left artifact" points="530,593 576,616 576,623 530,600"></polygon><polygon class="stack-detail-side stack-detail-side-right artifact" points="576,616 636,586 636,593 576,623"></polygon><polygon class="stack-detail stack-detail-top artifact" points="530,593 590,563 636,586 576,616"></polygon><path class="stack-detail-line artifact-line" d="M580 577 L605 589.5"></path><path class="stack-detail-line artifact-line" d="M566 584 L583 592.5"></path></g><g class="stack-label"><circle cx="730" cy="580" r="2"></circle><path d="M736 580 H784"></path><text x="800" y="554" class="stack-owner">BORROW</text><text x="800" y="579" class="stack-name">Artifact Store</text><text x="800" y="601" class="stack-note">immutable deployable output</text></g></g><g class="iso-module iso-adapter" data-part="adapters" data-rect="0 0 200 200" data-z="280" data-t="22" style="--stack-close:240px" data-level="2" data-center="530 430" data-width="400"><polygon class="iso-top" points="330,430 530,330 730,430 530,530"></polygon><polygon class="iso-left" points="330,430 530,530 530,552 330,452"></polygon><polygon class="iso-right" points="530,530 730,430 730,452 530,552"></polygon><g class="stack-surface-rim"><polygon class="stack-rim" points="350,429.2 530,339.2 710,429.2 530,519.2"></polygon></g><g class="stack-surface-details" data-detail="adapters"><polygon class="stack-detail-side stack-detail-side-left adapter-slot" points="368,428 442,465 442,470 368,433"></polygon><polygon class="stack-detail-side stack-detail-side-right adapter-slot" points="442,465 516,428 516,433 442,470"></polygon><polygon class="stack-detail stack-detail-top adapter-slot" points="368,428 442,391 516,428 442,465"></polygon><polygon class="stack-detail-side stack-detail-side-left adapter-slot" points="524,436 600,474 600,479 524,441"></polygon><polygon class="stack-detail-side stack-detail-side-right adapter-slot" points="600,474 676,436 676,441 600,479"></polygon><polygon class="stack-detail stack-detail-top adapter-slot" points="524,436 600,398 676,436 600,474"></polygon><polygon class="stack-detail policy" points="410,427 442,411 474,427 442,443"></polygon><path class="stack-detail-line policy-check" d="M433 421.5 L433 428.5"></path><path class="stack-detail-line policy-check" d="M433 428.5 L459 427.5"></path><polygon class="stack-detail delivery" points="570,436 602,420 634,436 602,452"></polygon><path class="stack-detail-line delivery-line" d="M586 427 L618 443"></path><path class="stack-detail-line delivery-line" d="M618 427 L586 443"></path></g><g class="stack-label"><circle cx="730" cy="440" r="2"></circle><path d="M736 440 H784"></path><text x="800" y="414" class="stack-owner">ADAPT</text><text x="800" y="439" class="stack-name">Identity / Policy · Delivery</text><text x="800" y="461" class="stack-note">trusted enforcement · artifact activation</text></g></g><g class="iso-module iso-owned iso-control" data-part="control" data-rect="0 0 200 200" data-z="420" data-t="30" style="--stack-close:360px" data-level="3" data-center="530 290" data-width="400"><polygon class="iso-top" points="330,290 530,190 730,290 530,390"></polygon><polygon class="iso-left" points="330,290 530,390 530,420 330,320"></polygon><polygon class="iso-right" points="530,390 730,290 730,320 530,420"></polygon><g class="stack-surface-rim"><polygon class="stack-rim" points="350,289.2 530,199.2 710,289.2 530,379.2"></polygon></g><g class="stack-surface-details" data-detail="control"><polygon class="stack-detail-side stack-detail-side-left record" points="388,291 486,340 486,348 388,299"></polygon><polygon class="stack-detail-side stack-detail-side-right record" points="486,340 586,290 586,298 486,348"></polygon><polygon class="stack-detail stack-detail-top record" points="388,291 488,241 586,290 486,340"></polygon><path class="stack-detail-line record-line" d="M482 263 L538 291"></path><path class="stack-detail-line record-line" d="M460 274 L516 302"></path><path class="stack-detail-line record-line" d="M438 285 L494 313"></path><polygon class="stack-detail-side stack-detail-side-left record-field" points="554,319 590,337 590,342 554,324"></polygon><polygon class="stack-detail-side stack-detail-side-right record-field" points="590,337 608,328 608,333 590,342"></polygon><polygon class="stack-detail stack-detail-top record-field" points="554,319 572,310 608,328 590,337"></polygon><polygon class="stack-detail-side stack-detail-side-left record-field" points="524,334 560,352 560,357 524,339"></polygon><polygon class="stack-detail-side stack-detail-side-right record-field" points="560,352 578,343 578,348 560,357"></polygon><polygon class="stack-detail stack-detail-top record-field" points="524,334 542,325 578,343 560,352"></polygon><polygon class="stack-detail-side stack-detail-side-left record-field" points="494,349 530,367 530,372 494,354"></polygon><polygon class="stack-detail-side stack-detail-side-right record-field" points="530,367 548,358 548,363 530,372"></polygon><polygon class="stack-detail stack-detail-top record-field" points="494,349 512,340 548,358 530,367"></polygon></g><g class="stack-label"><circle cx="730" cy="300" r="2"></circle><path d="M736 300 H784"></path><text x="800" y="274" class="stack-owner">OWN</text><text x="800" y="299" class="stack-name">Control Plane</text><text x="800" y="321" class="stack-note">ownership · lifetime · lifecycle</text></g></g><g class="iso-module iso-owned iso-publish" data-part="publish" data-rect="0 0 200 200" data-z="560" data-t="18" style="--stack-close:480px" data-level="4" data-center="530 150" data-width="400"><polygon class="iso-top" points="330,150 530,50 730,150 530,250"></polygon><polygon class="iso-left" points="330,150 530,250 530,268 330,168"></polygon><polygon class="iso-right" points="530,250 730,150 730,168 530,268"></polygon><g class="stack-surface-rim"><polygon class="stack-rim" points="350,149.2 530,59.2 710,149.2 530,239.2"></polygon></g><g class="stack-surface-details" data-detail="publish"><polygon class="stack-detail-side stack-detail-side-left intent-card" points="414,142 532,201 532,207 414,148"></polygon><polygon class="stack-detail-side stack-detail-side-right intent-card" points="532,201 648,143 648,149 532,207"></polygon><polygon class="stack-detail stack-detail-top intent-card" points="414,142 530,84 648,143 532,201"></polygon><path class="stack-detail-line intent-copy" d="M526 107 L600 144"></path><path class="stack-detail-line intent-copy" d="M504 118 L578 155"></path><path class="stack-detail-line intent-copy" d="M482 129 L556 166"></path><polygon class="stack-detail-side stack-detail-side-left intent-action" points="498,169 526,183 526,186 498,172"></polygon><polygon class="stack-detail-side stack-detail-side-right intent-action" points="526,183 542,175 542,178 526,186"></polygon><polygon class="stack-detail stack-detail-top intent-action" points="498,169 514,161 542,175 526,183"></polygon></g><g class="stack-label"><circle cx="730" cy="160" r="2"></circle><path d="M736 160 H784"></path><text x="800" y="134" class="stack-owner">OWN</text><text x="800" y="159" class="stack-name">Publish Contract</text><text x="800" y="181" class="stack-note">intent in · result out</text></g></g><path id="stackSparkletJourney" class="stack-sparklet-journey" d="M620 159 L620 299 L620 439 L620 579 L620 719"></path><g class="stack-sparklet-traveler" aria-hidden="true"><circle class="stack-sparklet-aura" r="13"></circle><polygon class="stack-sparklet-core" points="-8,0 0,-4 8,0 0,4"></polygon></g><g class="stack-sparklet-port" data-port="edge" transform="translate(620 719)"><polygon points="-8,0 0,-4 8,0 0,4"></polygon><circle r="1.8"></circle></g><g class="stack-sparklet-port" data-port="store" transform="translate(620 579)"><polygon points="-8,0 0,-4 8,0 0,4"></polygon><circle r="1.8"></circle></g><g class="stack-sparklet-port" data-port="adapters" transform="translate(620 439)"><polygon points="-8,0 0,-4 8,0 0,4"></polygon><circle r="1.8"></circle></g><g class="stack-sparklet-port" data-port="control" transform="translate(620 299)"><polygon points="-8,0 0,-4 8,0 0,4"></polygon><circle r="1.8"></circle></g><g class="stack-sparklet-port" data-port="publish" transform="translate(620 159)"><polygon points="-8,0 0,-4 8,0 0,4"></polygon><circle r="1.8"></circle></g></g><text class="architecture-side-title stack-context" x="800" y="778">Published experiences</text><g class="stack-context"><g class="architecture-origin"><rect x="800" y="800" width="136" height="60" rx="10"></rect><text x="812" y="825">experience-a</text><text x="812" y="845" class="architecture-origin-note">isolated origin</text></g><g class="architecture-origin"><rect x="952" y="800" width="136" height="60" rx="10"></rect><text x="964" y="825">experience-b</text><text x="964" y="845" class="architecture-origin-note">isolated origin</text></g><g class="architecture-origin"><rect x="1104" y="800" width="136" height="60" rx="10"></rect><text x="1116" y="825">experience-c</text><text x="1116" y="845" class="architecture-origin-note">isolated origin</text></g></g><g class="stack-assembled-label" aria-hidden="true"><text x="800" y="672" class="stack-name">One assembled platform</text><text x="800" y="698" class="stack-note">Expand to inspect responsibilities.</text></g></svg>
+        </div>
+
+        <div class="architecture-mobile" id="architectureMobile" role="img" aria-label="Mobile reference architecture. Clients send publish intent into the owned Publish Contract and Control Plane. Identity and delivery adapters connect the core to borrowed machinery. The Experience Edge serves isolated published experiences.">
+          <div class="mobile-arch-clients">
+            <div class="mobile-arch-kicker">Clients</div>
+            <div class="mobile-client-row">
+              <span>Human</span>
+              <span>Agent</span>
+              <span>CLI</span>
+              <span>Portal</span>
+            </div>
+          </div>
+
+          <div class="mobile-arch-transition">
+            <span>publish intent</span>
+            <i aria-hidden="true"></i>
+          </div>
+
+          <section class="mobile-arch-zone mobile-arch-owned-zone">
+            <div class="mobile-arch-zone-label">Own · product meaning</div>
+
+            <div class="mobile-arch-node extrude extrude-own mobile-arch-node-owned">
+              <small>Contract</small>
+              <strong>Publish Contract</strong>
+              <span>intent in · result out</span>
+            </div>
+
+            <div class="mobile-stack-gap" aria-hidden="true"></div>
+
+            <div class="mobile-arch-node extrude extrude-own mobile-arch-node-owned mobile-arch-node-primary">
+              <small>Control</small>
+              <strong>Control Plane</strong>
+              <span>identity · lineage · lifetime · lifecycle</span>
+            </div>
+          </section>
+
+          <div class="mobile-arch-transition mobile-arch-transition-soft">
+            <span>environment seams</span>
+            <i aria-hidden="true"></i>
+          </div>
+
+          <section class="mobile-arch-zone mobile-arch-machinery-zone">
+            <div class="mobile-arch-zone-label">Adapt / Borrow · machinery</div>
+
+            <div class="mobile-stack-adapters">
+              <div class="mobile-arch-node extrude extrude-adapt mobile-arch-node-adapter"><small>Shared adapter level</small><strong>Identity / Policy · Delivery</strong><span>trusted enforcement · artifact activation</span></div>
+            </div>
+            <div class="mobile-stack-gap" aria-hidden="true"></div>
+            <div class="mobile-arch-node extrude extrude-borrow mobile-arch-node-borrow mobile-arch-node-store"><small>Borrow</small><strong>Artifact Store</strong><span>immutable deployable output</span></div>
+            <div class="mobile-stack-gap" aria-hidden="true"></div>
+            <div class="mobile-arch-node extrude extrude-borrow mobile-arch-node-borrow mobile-arch-node-edge"><small>Borrow / adapt</small><strong>Experience Edge</strong><span>routing · protection · origin isolation</span></div>
+          </section>
+
+          <div class="mobile-arch-transition">
+            <span>protected URL</span>
+            <i aria-hidden="true"></i>
+          </div>
+
+          <div class="mobile-arch-origins">
+            <div class="mobile-arch-kicker">Published experiences</div>
+            <div class="mobile-origin-row">
+              <span><b>a</b><small>isolated</small></span>
+              <span><b>b</b><small>isolated</small></span>
+              <span><b>c</b><small>isolated</small></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="architecture-dependencies"><div><strong>Actual relationships</strong><small>Stack order is not call order.</small></div><ul><li>Clients → Publish Contract → Control Plane</li><li>Control Plane → Identity / Policy + Delivery</li><li>Delivery → Artifact Store → Experience Edge</li><li>Identity / Policy → Experience Edge</li><li>Experience Edge → isolated origins</li></ul></div><figcaption class="architecture-legend">
+          <span><i class="legend-swatch legend-owned"></i><strong>Own</strong> product meaning</span>
+          <span><i class="legend-swatch legend-adapter"></i><strong>Adapt</strong> environment seams</span>
+          <span><i class="legend-swatch legend-borrow"></i><strong>Borrow</strong> commodity machinery</span>
+          <span class="architecture-legend-note">Responsibilities, not mandatory services.</span>
+        </figcaption>
+      </figure>
+
+      <div class="architecture-nerd-note nerd-only">
+        <div class="depth-label">Nerd depth</div>
+        <p>
+          The first physical implementation is now intentionally one ASP.NET Core deployable plus one test project.
+          Split only when isolation, scaling, failure domains or ownership make it necessary.
+        </p>
+      </div>
+    </section>
+
+
+    <section class="section-shell baseline-section" id="physicalBaseline">
+      <div class="baseline-heading">
+        <div>
+          <div class="eyebrow">Physical baseline · v0.1</div>
+          <h2>One control plane.<br /><span>Three ways in.</span></h2>
+        </div>
+        <p>
+          The logical architecture stays modular. The first physical implementation deliberately does not.
+        </p>
+      </div>
+
+      <div class="baseline-board">
+        <div class="baseline-board-head">
+          <span>Local walking skeleton</span>
+          <small>accepted baseline · not enterprise rollout</small>
+        </div>
+
+        <div class="baseline-flow" role="img" aria-label="A human web surface and a machine HTTP surface enter the same ASP.NET Core application use cases, backed by relational metadata and thin infrastructure seams.">
+<div class="baseline-entries">          <div class="baseline-entry">
+            <span class="baseline-meta">HUMAN</span>
+            <strong>Web surface</strong>
+            <small>S1 smoke: Razor Pages</small>
+          </div>
+
+          <div class="baseline-entry">
+            <span class="baseline-meta">MACHINE</span>
+            <strong>HTTP surface</strong>
+            <small>S1/S2 path: Minimal API</small>
+          </div>
+
+</div>          <div class="baseline-flow-arrow" aria-hidden="true">→</div>
+
+          <div class="baseline-core extrude extrude-own">
+            <span class="baseline-meta">ONE ASP.NET CORE DEPLOYABLE</span>
+            <strong>Shared application use cases</strong>
+            <span>Experience · Deployment</span>
+            <span>Publish · Inspect · Extend · Retire</span>
+            <span class="baseline-core-data">relational metadata · EF Core</span>
+          </div>
+
+          <div class="baseline-flow-arrow" aria-hidden="true">→</div>
+
+          <div class="baseline-borrow">
+            <span class="baseline-meta">THIN SEAMS</span>
+            <strong>Borrow the machinery</strong>
+            <span>identity</span>
+            <span>storage</span>
+            <span>delivery</span>
+          </div>
+        </div>
+
+        <div class="baseline-board-note">
+          <strong>One deployable + one test project.</strong>
+          <span>Split only when a real security, scaling, failure or ownership boundary earns it.</span>
+        </div>
+      </div>
+
+      <div class="runtime-horizon">
+        <div class="runtime-horizon-copy">
+          <div class="eyebrow">Execution horizon</div>
+          <h3>Static first.<br /><span>Not static‑bound.</span></h3>
+          <p>Future execution modes are preserved seams, not a roadmap the first workload must pay for.</p>
+        </div>
+
+        <div class="runtime-horizon-body">
+          <div class="runtime-lane runtime-lane-current">
+            <small>NOW</small>
+            <strong>Static</strong>
+            <span>first delivery lane to prove</span>
+          </div>
+
+          <div class="runtime-lane runtime-lane-future">
+            <small>PRESERVED SEAM</small>
+            <strong>WASI / Component</strong>
+            <span>bounded execution candidate</span>
+          </div>
+
+          <div class="runtime-lane runtime-lane-future">
+            <small>PRESERVED SEAM</small>
+            <strong>Container</strong>
+            <span>arbitrary runtime candidate</span>
+          </div>
+
+          <div class="runtime-lane runtime-lane-future">
+            <small>PRESERVED SEAM</small>
+            <strong>External</strong>
+            <span>already-hosted service</span>
+          </div>
+          <p class="runtime-binding-note">Bindings stay orthogonal: data · secrets · object storage · APIs · messaging.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section-shell sparklet-section" id="sparkletLife">
+      <div class="sparklet-heading">
+        <div>
+          <div class="eyebrow">Rapid naming draft · Sparkery</div>
+          <h2>The life of a Sparklet.<br /><span>Small thing. Real URL.</span></h2>
+        </div>
+        <p>
+          A Sparklet is the friendly face of a published Experience — not a new domain object.
+          The canonical contract underneath stays deliberately boring.
+        </p>
+      </div>
+
+      <div class="sparklet-stage" role="region" aria-label="Concept simulation showing a deployable artifact published as a Sparklet, inspected while live, and reaching a lifetime decision to extend, retire or graduate if justified.">
+        <div class="sparklet-stage-head">
+          <div class="sparklet-stage-meta">
+            <span>Fresh from the Sparkery</span>
+            <small>concept simulation · not implemented</small>
+          </div>
+          <div class="sparklet-stage-tools">
+            <span class="sparklet-night-whisper" id="sparkletNightWhisper" aria-hidden="true">Some things are easier to see in the dark.</span>
+            <button class="sparklet-light-switch" id="sparkletLights" type="button" aria-pressed="false" aria-label="Turn Sparkery lights out">
+              <span>lights</span>
+              <span class="sparklet-switch-track" aria-hidden="true"><i></i></span>
+              <strong id="sparkletLightsLabel">on</strong>
+            </button>
+          </div>
+        </div>
+
+        <div class="sparklet-runtime" id="sparkletRuntime">
+          <span class="sparklet-flight" id="sparkletFlight" aria-hidden="true" hidden>✦</span>
+
+          <div class="sparklet-source">
+            <button class="sparklet-glyph sparklet-trigger" id="sparkletSourceSpark" type="button" aria-label="Push this Sparklet to the runtime">
+              <span class="sparklet-core" aria-hidden="true"></span>
+            </button>
+            <span class="sparklet-trigger-hint">tap the spark · it has somewhere to be</span>
+            <small>Deployable artifact</small>
+            <strong>workshop-story</strong>
+            <span>HTML · CSS · JS</span>
+          </div>
+
+          <div class="sparklet-hop" aria-hidden="true">
+            <span>publish</span>
+            <i></i>
+          </div>
+
+          <article class="sparklet-live extrude extrude-experience" id="sparkletLive">
+            <div class="sparklet-live-topline">
+              <span class="sparklet-live-status"><i aria-hidden="true"></i> live</span>
+              <span>sparklet · 14s old</span>
+            </div>
+
+            <div class="sparklet-live-title">
+              <span class="sparklet-glyph sparklet-glyph-small" id="sparkletTargetSpark" aria-hidden="true"><span class="sparklet-core"></span></span>
+              <div>
+                <small>Sparklet</small>
+                <h3>workshop-story</h3>
+              </div>
+            </div>
+
+            <code class="sparklet-live-url">workshop-story.sparkery.internal.example</code>
+
+            <div class="sparklet-facts">
+              <span><small>Owner</small><strong>You</strong></span>
+              <span><small>Audience</small><strong>Team</strong></span>
+              <span><small>Lifetime</small><strong>30 days</strong></span>
+              <span><small>Deployment</small><strong>dep_042</strong></span>
+            </div>
+
+            <p>Born 14 seconds ago. Already has an owner.</p>
+          </article>
+
+          <div class="sparklet-hop sparklet-hop-inspect" aria-hidden="true">
+            <span>inspect</span>
+            <i></i>
+          </div>
+
+          <div class="sparklet-inspect">
+            <small>Check-in</small>
+            <strong>Everything behaving.</strong>
+            <dl>
+              <div><dt>Reachability</dt><dd>reachable</dd></div>
+              <div><dt>Access</dt><dd>team applied</dd></div>
+              <div><dt>Diagnostics</dt><dd>no action</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="sparklet-lifetime">
+          <div class="sparklet-lifetime-labels">
+            <span>now</span>
+            <strong>29d 23h left</strong>
+            <span>expiry</span>
+          </div>
+          <div class="sparklet-lifetime-rail" aria-hidden="true">
+            <i></i>
+          </div>
+          <div class="sparklet-outcomes">
+            <span><small>Extend</small><strong>keep the spark</strong></span>
+            <span><small>Retire</small><strong>let it fade</strong></span>
+            <span><small>Graduate</small><strong>only if it earns it</strong></span>
+          </div>
+        </div>
+
+        <div class="sparklet-canonical nerd-only">
+          <span class="depth-label">Under the nickname</span>
+          <p><strong>Sparklet</strong> maps to the existing Experience + active Deployment semantics. Sparkery is presentation language; the API does not need whimsy.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell architecture-contract-section" id="contract">
+      <div class="architecture-contract-copy">
+        <div class="eyebrow">The thin contract</div>
+        <h2>Small enough to remember.</h2>
+        <p>Creator intent stays stable even when the delivery machinery changes.</p>
+      </div>
+
+      <div class="contract-ribbon" aria-label="Publish contract summary">
+        <div class="contract-ribbon-group">
+          <small>Intent</small>
+          <strong>deployableArtifact</strong>
+          <span>owner</span>
+          <span>audience</span>
+          <span>lifetime</span>
+        </div>
+        <div class="contract-ribbon-action" aria-hidden="true">
+          <span class="contract-action-wide">publish →</span>
+          <span class="contract-action-mobile">publish ↓</span>
+        </div>
+        <div class="contract-ribbon-group contract-ribbon-result">
+          <small>Result</small>
+          <strong>experienceId</strong>
+          <span>deploymentId</span>
+          <span>url</span>
+          <span>expiresAt</span>
+          <span>status</span>
+          <span>diagnostics</span>
+        </div>
+      </div>
+
+      <div class="architecture-open nerd-only">
+        <div>
+          <div class="depth-label">Still deliberately open</div>
+          <p>Storage substrate · concrete metadata database · identity/audience integration · URL/origin strategy · cleanup scheduler · agent authentication · exact inspect contract.</p>
+        </div>
+        <a class="architecture-source-link" href="https://github.com/jdistlr/agentic-experience-platform/blob/main/state/ARCHITECTURE-QUESTIONS.md">
+          Open architecture questions ↗
+        </a>
+      </div>
+    </section>
+
+    <section class="section-shell architecture-sources">
+      <div>
+        <div class="eyebrow">Canonical sources</div>
+        <h2>The page explains.<br /><span>The repository decides.</span></h2>
+      </div>
+      <div class="architecture-source-list">
+        <a href="https://github.com/jdistlr/agentic-experience-platform/blob/main/docs/18-reference-architecture-v0.1.md">
+          <span>Reference Architecture v0.1.1</span><small>canonical model ↗</small>
+        </a>
+        <a href="https://github.com/jdistlr/agentic-experience-platform/blob/main/docs/19-capability-ownership-map.md">
+          <span>Capability Ownership Map</span><small>own · borrow · adapter · later ↗</small>
+        </a>
+        <a href="https://github.com/jdistlr/agentic-experience-platform/blob/main/docs/20-runtime-and-binding-seams.md">
+          <span>Runtime & Binding Seams</span><small>static first · future-safe ↗</small>
+        </a>
+        <a href="https://github.com/jdistlr/agentic-experience-platform/blob/main/docs/21-control-plane-baseline-v0.1.md">
+          <span>Control Plane Baseline v0.1</span><small>first physical shape ↗</small>
+        </a>
+        <a href="https://github.com/jdistlr/agentic-experience-platform/blob/main/state/FRONTIER.md">
+          <span>Current Frontier</span><small>current truth ↗</small>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer architecture-footer">
+    <span>Reference Architecture v0.1.1 · Control Plane Baseline v0.1</span>
+    <a href="./index.html">Back to Concept Experience →</a>
+  </footer>
+
+  <script src="./i18n.js?v=0d04f2d07362"></script>
+  <script src="./app.js?v=0d04f2d07362"></script>
+  <script src="./architecture.js?v=0d04f2d07362"></script>
+  <script src="./spec-grid.js?v=0d04f2d07362"></script>
+</body>
+</html>

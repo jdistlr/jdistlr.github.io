@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Design Grammar Specimen — Agentic Experience Platform</title>
+  <meta
+    name="description"
+    content="The Experience Design Language rendered from its live tokens: typefaces, type scale, color roles, surfaces, semantic states, diagram vocabulary, space and motion."
+  />
+  <link rel="preload" href="./fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="./tokens.css?v=0d04f2d07362" />
+  <link rel="stylesheet" href="./styles.css?v=0d04f2d07362" />
+  <link rel="stylesheet" href="./design.css?v=0d04f2d07362" />
+  <meta name="aep-build" content="0d04f2d07362" />
+</head>
+<body class="specimen-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <a class="brand" href="./index.html" aria-label="Agentic Experience Platform overview">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-full">Agentic Experience Platform</span><abbr class="brand-compact" title="Agentic Experience Platform">AEP</abbr>
+    </a>
+    <nav class="topbar-actions specimen-nav" aria-label="Pages">
+      <a href="./index.html">Overview</a>
+      <a href="./architecture.html">Architecture</a>
+      <a href="./design.html" aria-current="page">Grammar</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="section-shell hero specimen-hero">
+      <div class="eyebrow">Experience design language · specimen</div>
+      <h1>Minimal surface.<br /><span>High semantic density.</span></h1>
+      <p class="hero-lead">The foundations of these pages, rendered from the live tokens. Change a token and this page changes with it.</p>
+      <p class="specimen-source"><code>site/tokens.css</code> · primitives → semantic roles → usage · press <kbd>G</kbd> for the grid</p>
+    </section>
+
+    <section class="section-shell" id="type" aria-labelledby="type-title">
+      <div class="section-heading">
+        <div><div class="eyebrow">01 · Typefaces</div><h2 id="type-title">Sans for meaning. Mono for machinery.</h2></div>
+        <p>Both are self-hosted, so every platform sees the same grammar.</p>
+      </div>
+
+      <div class="specimen-faces">
+        <figure class="specimen-face">
+          <div class="specimen-face-glyph">Aa</div>
+          <figcaption>
+            <strong>Inter</strong>
+            <code>--sans</code>
+            <span>Narrative, headings, labels. Variable 100–900, display optical size at large sizes.</span>
+          </figcaption>
+          <p class="specimen-weights"><span style="font-weight: 400">Regular 400</span><span style="font-weight: 650">Semibold 650</span><span style="font-weight: 750">Heavy 750</span></p>
+        </figure>
+        <figure class="specimen-face is-mono">
+          <div class="specimen-face-glyph">{}</div>
+          <figcaption>
+            <strong>JetBrains Mono</strong>
+            <code>--mono</code>
+            <span>Identifiers, state, metadata, edge annotations. Used selectively, never as terminal cosplay.</span>
+          </figcaption>
+          <p class="specimen-weights"><span>experienceId · deploymentId</span><span style="font-weight: 700">STATE · ACCEPTED</span></p>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section-shell" id="scale" aria-labelledby="scale-title">
+      <div class="section-heading">
+        <div><div class="eyebrow">02 · Type scale</div><h2 id="scale-title">Ten text steps. Seven display steps.</h2></div>
+        <p>11 px is the floor. Display sizes are fluid between their phone and wide-screen bounds.</p>
+      </div>
+
+      <div class="diagram-panel">
+        <div class="diagram-panel-head"><span>Display</span><small>token · declared · rendered now</small></div>
+        <div class="specimen-scale">
+          <div class="specimen-row" data-size="--display-1"><code>--display-1</code><span class="specimen-declared"></span><span class="specimen-px"></span><p class="specimen-sample is-display">Contract.</p></div>
+          <div class="specimen-row" data-size="--display-2"><code>--display-2</code><span class="specimen-declared"></span><span class="specimen-px"></span><p class="specimen-sample is-heading">Borrow the machinery.</p></div>
+          <div class="specimen-row" data-size="--display-3"><code>--display-3</code><span class="specimen-declared"></span><span class="specimen-px"></span><p class="specimen-sample is-heading">Static first.</p></div>
+          <div class="specimen-row" data-size="--display-4"><code>--display-4</code><span class="specimen-declared"></span><span class="specimen-px"></span><p class="specimen-sample is-statement">Publish safely.</p></div>
+          <div class="specimen-row" data-size="--heading-1"><code>--heading-1</code><span class="specimen-declared"></span><span class="specimen-px"></span><p class="specimen-sample is-title">Shared application use cases</p></div>
+          <div class="specimen-row" data-size="--heading-2"><code>--heading-2</code><span class="specimen-declared"></span><span class="specimen-px"></span><p class="specimen-sample is-lead">A thin internal publishing lane.</p></div>
+        </div>
+      </div>
+
+      <div class="diagram-panel specimen-gap">
+        <div class="diagram-panel-head"><span>Text</span><small>token · rendered now</small></div>
+        <div class="specimen-scale is-text">
+          <div class="specimen-row" data-size="--text-3xl"><code>--text-3xl</code><span class="specimen-px"></span><p class="specimen-sample">Make the first publish almost boring.</p></div>
+          <div class="specimen-row" data-size="--text-2xl"><code>--text-2xl</code><span class="specimen-px"></span><p class="specimen-sample">Creator intent stays tiny.</p></div>
+          <div class="specimen-row" data-size="--text-xl"><code>--text-xl</code><span class="specimen-px"></span><p class="specimen-sample">Stay shared · useful, not operational</p></div>
+          <div class="specimen-row" data-size="--text-lg"><code>--text-lg</code><span class="specimen-px"></span><p class="specimen-sample">Intent in. Deterministic action out.</p></div>
+          <div class="specimen-row" data-size="--text-body"><code>--text-body</code><span class="specimen-px"></span><p class="specimen-sample">Who owns it? Who can see it? How long should it live?</p></div>
+          <div class="specimen-row" data-size="--text-base"><code>--text-base</code><span class="specimen-px"></span><p class="specimen-sample">Responsibilities, not mandatory services.</p></div>
+          <div class="specimen-row" data-size="--text-md"><code>--text-md</code><span class="specimen-px"></span><p class="specimen-sample">identity · routing · lifecycle · metadata</p></div>
+          <div class="specimen-row" data-size="--text-sm"><code>--text-sm</code><span class="specimen-px"></span><p class="specimen-sample">operator maintains the platform</p></div>
+          <div class="specimen-row" data-size="--text-xs"><code>--text-xs</code><span class="specimen-px"></span><p class="specimen-sample is-mono">artifact → protected URL</p></div>
+          <div class="specimen-row" data-size="--text-2xs"><code>--text-2xs</code><span class="specimen-px"></span><p class="specimen-sample is-mono is-label">Publish path · not deployment topology</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell" id="color" aria-labelledby="color-title">
+      <div class="section-heading">
+        <div><div class="eyebrow">03 · Color roles</div><h2 id="color-title">Warm neutrals. One accent.</h2></div>
+        <p>Pages use roles, not hex values. Dark mode remaps the roles and keeps the hierarchy.</p>
+      </div>
+
+      <div class="specimen-swatches">
+        <figure class="specimen-swatch" data-color="--bg"><i></i><figcaption><code>--bg</code><span>page background</span><small data-primitive data-dark="night-0">warm-100</small></figcaption></figure>
+        <figure class="specimen-swatch" data-color="--surface"><i></i><figcaption><code>--surface</code><span>semantic panel</span><small data-primitive data-dark="night-50">warm-50</small></figcaption></figure>
+        <figure class="specimen-swatch" data-color="--surface-strong"><i></i><figcaption><code>--surface-strong</code><span>node · chip</span><small data-primitive data-dark="night-100">warm-0</small></figcaption></figure>
+        <figure class="specimen-swatch" data-color="--accent-soft"><i></i><figcaption><code>--accent-soft</code><span>track · borrowed fill</span><small data-primitive data-dark="night-200">warm-200</small></figcaption></figure>
+        <figure class="specimen-swatch" data-color="--border"><i></i><figcaption><code>--border</code><span>default boundary</span><small data-primitive data-dark="night-300">warm-300</small></figcaption></figure>
+        <figure class="specimen-swatch" data-color="--border-strong"><i></i><figcaption><code>--border-strong</code><span>decision · emphasis</span><small data-primitive data-dark="night-400">warm-400</small></figcaption></figure>
+        <figure class="specimen-swatch" data-color="--muted"><i></i><figcaption><code>--muted</code><span>secondary text</span><small data-primitive data-dark="night-600">warm-600</small></figcaption></figure>
+        <figure class="specimen-swatch" data-color="--text"><i></i><figcaption><code>--text</code><span>graphite text</span><small data-primitive data-dark="night-ink">graphite-900</small></figcaption></figure>
+        <figure class="specimen-swatch is-accent" data-color="--lilac-soft"><i></i><figcaption><code>--lilac-soft</code><span>hypothesis fill</span><small data-primitive data-dark="night-lilac-100">lilac-100</small></figcaption></figure>
+        <figure class="specimen-swatch is-accent" data-color="--lilac"><i></i><figcaption><code>--lilac</code><span>active path</span><small data-primitive data-dark="night-lilac-400">lilac-400</small></figcaption></figure>
+        <figure class="specimen-swatch is-accent" data-color="--lilac-ink"><i></i><figcaption><code>--lilac-ink</code><span>accent text</span><small data-primitive data-dark="night-lilac-600">lilac-600</small></figcaption></figure>
+        <figure class="specimen-swatch" data-color="--success"><i></i><figcaption><code>--success</code><span>rare confirmation</span><small data-primitive data-dark="green-700">green-700</small></figcaption></figure>
+      </div>
+    </section>
+
+    <section class="section-shell" id="surfaces" aria-labelledby="surfaces-title">
+      <div class="section-heading">
+        <div><div class="eyebrow">04 · Surfaces</div><h2 id="surfaces-title">Every surface earns its boundary.</h2></div>
+        <p>Spacing first, then border, then contrast. Shadow only when geometry needs depth.</p>
+      </div>
+
+      <div class="specimen-ladder" role="img" aria-label="Surface hierarchy: page background contains section rhythm, which contains a semantic panel, which contains nodes and chips.">
+        <div class="ladder-level is-page"><code>page background · --bg</code>
+          <div class="ladder-level is-section"><code>section rhythm · --space</code>
+            <div class="ladder-level is-panel"><code>semantic panel · --surface · --border · --radius-lg</code>
+              <div class="ladder-nodes">
+                <span class="ladder-node"><code>node</code>--surface-strong</span>
+                <span class="ladder-node"><code>chip</code>--radius-pill</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell" id="states" aria-labelledby="states-title">
+      <div class="section-heading">
+        <div><div class="eyebrow">05 · Semantic states</div><h2 id="states-title">Meaning never rides on color alone.</h2></div>
+        <p>Each state uses at least two channels: geometry, border, weight, label, depth.</p>
+      </div>
+
+      <div class="specimen-states">
+        <article class="state-card is-current"><div class="state-demo"><span>Publish Contract</span></div><h3>Current</h3><p>Solid geometry, ordinary border. Demonstrated or accepted.</p></article>
+        <article class="state-card is-emphasis"><div class="state-demo"><span>Publish</span></div><h3>Emphasis</h3><p>Lilac border and ink. The active path, used sparingly.</p></article>
+        <article class="state-card is-hypothesis"><div class="state-demo"><span><small>Hypothesis</small>compose experience</span></div><h3>Provisional</h3><p>Lilac fill plus an explicit status label.</p></article>
+        <article class="state-card is-later"><div class="state-demo"><span><small>Later</small>validate / register</span></div><h3>Later</h3><p>Dashed boundary, quieter contrast, less weight.</p></article>
+        <article class="state-card is-trust"><div class="state-demo"><span>experience-a</span><span>experience-b</span></div><h3>Trust / isolation</h3><p>Bounded zones, separate origins, explicit crossings.</p></article>
+        <article class="state-card is-borrowed"><div class="state-demo"><span>Artifact Store</span></div><h3>Borrowed</h3><p>Warm neutral fill, lower ownership weight than the core.</p></article>
+      </div>
+
+      <div class="specimen-extrusion" aria-labelledby="extrusion-title">
+        <div class="extrusion-copy">
+          <div class="eyebrow">Extrusion · ownership depth</div>
+          <h3 id="extrusion-title">Depth says who owns it.</h3>
+          <p>The side face of the isometric stack, flattened to 2.5D. One light direction, one ratio. Hover lifts the top face; the footprint stays put.</p>
+        </div>
+        <div class="extrusion-row">
+          <figure class="extrusion-item" data-token="--extrude-own"><div class="extrusion-node extrude extrude-own is-own"><small>Own</small><strong>Control Plane</strong></div><figcaption><code>.extrude-own</code><span></span></figcaption></figure>
+          <figure class="extrusion-item" data-token="--extrude-adapt"><div class="extrusion-node extrude extrude-adapt is-adapt"><small>Adapt</small><strong>Identity / Policy</strong></div><figcaption><code>.extrude-adapt</code><span></span></figcaption></figure>
+          <figure class="extrusion-item" data-token="--extrude-borrow"><div class="extrusion-node extrude extrude-borrow is-borrow"><small>Borrow</small><strong>Artifact Store</strong></div><figcaption><code>.extrude-borrow</code><span></span></figcaption></figure>
+          <figure class="extrusion-item"><div class="extrusion-node is-flat"><small>Notation</small><strong>Sequence step</strong></div><figcaption><code>flat</code><span>0 · UML, flows</span></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell" id="diagram" aria-labelledby="diagram-title">
+      <div class="section-heading">
+        <div><div class="eyebrow">06 · Diagram vocabulary</div><h2 id="diagram-title">Geometry states the relationship.</h2></div>
+        <p>Short mono labels on edges. Prose stays outside the diagram.</p>
+      </div>
+
+      <div class="diagram-panel diagram-scroll" tabindex="0" aria-label="Diagram vocabulary, scrolls sideways on small screens">
+        <div class="diagram-panel-head"><span>Vocabulary</span><small>edges · decisions · loops · boundaries</small></div>
+        <svg class="specimen-vocab" viewBox="0 0 1080 300" role="img" aria-labelledby="vocab-title vocab-desc">
+          <title id="vocab-title">Diagram vocabulary</title>
+          <desc id="vocab-desc">Six primitives: a solid relationship edge, a lilac active-path edge, a dashed later edge, a decision diamond with yes and no branches, a loop back to the same node, and a dashed trust boundary around two isolated origins.</desc>
+          <defs>
+            <marker id="vArrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L8 4 L0 8 Z" class="v-head"></path></marker>
+            <marker id="vArrowAccent" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L8 4 L0 8 Z" class="v-head-accent"></path></marker>
+          </defs>
+
+          <g transform="translate(40 50)">
+            <line class="v-edge" x1="0" y1="20" x2="250" y2="20" marker-end="url(#vArrow)"></line>
+            <text class="v-label" x="125" y="10" text-anchor="middle">relationship</text>
+            <line class="v-edge is-accent" x1="0" y1="80" x2="250" y2="80" marker-end="url(#vArrowAccent)"></line>
+            <text class="v-label is-accent" x="125" y="70" text-anchor="middle">active path</text>
+            <line class="v-edge is-later" x1="0" y1="140" x2="250" y2="140" marker-end="url(#vArrow)"></line>
+            <text class="v-label" x="125" y="130" text-anchor="middle">later · conditional</text>
+          </g>
+
+          <g transform="translate(390 40)">
+            <polygon class="v-decision" points="90,10 160,70 90,130 20,70"></polygon>
+            <text class="v-node-text" x="90" y="74" text-anchor="middle">value?</text>
+            <line class="v-edge" x1="160" y1="70" x2="250" y2="70" marker-end="url(#vArrow)"></line>
+            <text class="v-label" x="205" y="60" text-anchor="middle">no</text>
+            <line class="v-edge" x1="90" y1="130" x2="90" y2="200" marker-end="url(#vArrow)"></line>
+            <text class="v-label" x="104" y="172">yes</text>
+          </g>
+
+          <g transform="translate(700 70)">
+            <rect class="v-node" x="0" y="40" width="150" height="56" rx="12"></rect>
+            <text class="v-node-text" x="75" y="73" text-anchor="middle">Explore</text>
+            <path class="v-edge is-accent" d="M30 40 V14 H120 V36" fill="none" marker-end="url(#vArrowAccent)"></path>
+            <text class="v-label is-accent" x="75" y="6" text-anchor="middle">↺ iterate</text>
+          </g>
+
+          <g transform="translate(700 190)">
+            <rect class="v-boundary" x="0" y="0" width="340" height="86" rx="14"></rect>
+            <text class="v-label" x="14" y="20">trust boundary</text>
+            <rect class="v-node" x="18" y="32" width="140" height="40" rx="10"></rect>
+            <text class="v-node-text is-small" x="88" y="57" text-anchor="middle">origin-a</text>
+            <rect class="v-node" x="182" y="32" width="140" height="40" rx="10"></rect>
+            <text class="v-node-text is-small" x="252" y="57" text-anchor="middle">origin-b</text>
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <section class="section-shell" id="space" aria-labelledby="space-title">
+      <div class="section-heading">
+        <div><div class="eyebrow">07 · Space, radius, motion</div><h2 id="space-title">Whitespace is structural.</h2></div>
+        <p>A 4 px base. Short, eased, reversible motion, and none at all for reduced-motion users.</p>
+      </div>
+
+      <div class="specimen-space">
+        <div class="space-row" data-space="--space-1"><code>--space-1</code><span class="specimen-px"></span><i></i></div>
+        <div class="space-row" data-space="--space-2"><code>--space-2</code><span class="specimen-px"></span><i></i></div>
+        <div class="space-row" data-space="--space-3"><code>--space-3</code><span class="specimen-px"></span><i></i></div>
+        <div class="space-row" data-space="--space-4"><code>--space-4</code><span class="specimen-px"></span><i></i></div>
+        <div class="space-row" data-space="--space-5"><code>--space-5</code><span class="specimen-px"></span><i></i></div>
+        <div class="space-row" data-space="--space-6"><code>--space-6</code><span class="specimen-px"></span><i></i></div>
+        <div class="space-row" data-space="--space-7"><code>--space-7</code><span class="specimen-px"></span><i></i></div>
+        <div class="space-row" data-space="--space-8"><code>--space-8</code><span class="specimen-px"></span><i></i></div>
+        <div class="space-row" data-space="--space-9"><code>--space-9</code><span class="specimen-px"></span><i></i></div>
+        <div class="space-row is-rhythm" data-space="--space"><code>--space</code><span class="specimen-px"></span><i></i></div>
+      </div>
+
+      <div class="specimen-tokens">
+        <div class="token-group">
+          <h3>Radius</h3>
+          <div class="radius-row">
+            <span class="radius-sample" style="border-radius: var(--radius-sm)"><code>--radius-sm</code></span>
+            <span class="radius-sample" style="border-radius: var(--radius-md)"><code>--radius-md</code></span>
+            <span class="radius-sample" style="border-radius: var(--radius-lg)"><code>--radius-lg</code></span>
+            <span class="radius-sample" style="border-radius: var(--radius-pill)"><code>--radius-pill</code></span>
+          </div>
+        </div>
+        <div class="token-group">
+          <h3>Motion</h3>
+          <button class="motion-demo" type="button" aria-pressed="false"><span class="motion-track"><i></i></span><span>Play <code>--duration-slow</code> · <code>--ease-emphasis</code></span></button>
+          <dl class="motion-list">
+            <div data-token="--duration-fast"><dt><code>--duration-fast</code></dt><dd></dd></div>
+            <div data-token="--duration-base"><dt><code>--duration-base</code></dt><dd></dd></div>
+            <div data-token="--duration-slow"><dt><code>--duration-slow</code></dt><dd></dd></div>
+            <div data-token="--ease-emphasis"><dt><code>--ease-emphasis</code></dt><dd></dd></div>
+            <div data-token="--extrude-rise"><dt><code>--extrude-rise</code></dt><dd></dd></div>
+            <div data-token="--extrude-ratio"><dt><code>--extrude-ratio</code></dt><dd></dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell closing">
+      <div class="eyebrow">Transfer rule</div>
+      <h2>Copy the grammar, not the content.</h2>
+      <p>Reuse hierarchy, geometry, responsive behavior and diagram semantics. Re-derive labels and narrative from the target project's own truth.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Specimen · rendered from <code>site/tokens.css</code> · canon in <code>design/EXPERIENCE-DESIGN-LANGUAGE.md</code></span>
+    <span><kbd>G</kbd> grid</span>
+  </footer>
+
+  <script src="./design.js?v=0d04f2d07362"></script>
+  <script src="./spec-grid.js?v=0d04f2d07362"></script>
+</body>
+</html>

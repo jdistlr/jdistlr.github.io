@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Presentation Runtime Spike — Agentic Experience Platform</title>
+  <link rel="preload" href="./fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="./tokens.css?v=0d04f2d07362" />
+  <link rel="stylesheet" href="./styles.css?v=0d04f2d07362" />
+  <link rel="stylesheet" href="./presentation-lab.css?v=0d04f2d07362" />
+  <meta name="aep-build" content="0d04f2d07362" />
+</head>
+<body class="presentation-lab">
+  <header class="lab-toolbar">
+    <div class="lab-brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <div>
+        <small>EXPERIMENT · PRESENTATION ARTIFACT ADAPTER</small>
+        <strong id="labDeckTitle">Agentic Experience Platform</strong>
+      </div>
+    </div>
+    <nav class="lab-actions" aria-label="Presentation controls">
+      <button type="button" id="labOverview">Grid</button>
+      <button type="button" id="labNotes">Notes</button>
+      <button type="button" id="labPresenter">Presenter</button>
+      <button type="button" id="labFullscreen">Fullscreen</button>
+      <a href="./index.html">Experience ↗</a>
+    </nav>
+  </header>
+
+  <main class="lab-shell">
+    <section class="lab-stage-area" aria-live="polite">
+      <div class="lab-stage-frame" id="labStageFrame">
+        <div class="lab-canvas" id="labCanvas">
+          <div class="lab-mount" id="labMount"></div>
+        </div>
+      </div>
+    </section>
+    <aside class="lab-presenter-side" id="labPresenterSide" aria-label="Presenter context">
+      <div class="lab-side-block"><small>NEXT</small><strong id="labNextTitle">—</strong></div>
+      <div class="lab-side-block"><small>NOTES</small><p id="labNotesText">No speaker notes metadata on this scene yet.</p></div>
+      <div class="lab-side-block"><small>TIMER</small><button type="button" id="labTimer">00:00</button></div>
+    </aside>
+  </main>
+
+  <footer class="lab-footer">
+    <button type="button" id="labPrev" aria-label="Previous scene">←</button>
+    <div class="lab-progress-wrap">
+      <span id="labCount">01 / 01</span>
+      <strong id="labTitle">Loading…</strong>
+      <div class="lab-progress" aria-hidden="true"><i id="labProgress"></i></div>
+    </div>
+    <button type="button" id="labNext" aria-label="Next scene">→</button>
+  </footer>
+
+  <div class="lab-overlay" id="labOverlay" hidden>
+    <div class="lab-overlay-head">
+      <div><small>OVERVIEW</small><strong>Jump to a scene</strong></div>
+      <button type="button" id="labOverlayClose" aria-label="Close overview">×</button>
+    </div>
+    <div class="lab-grid" id="labGrid"></div>
+  </div>
+
+  <div class="lab-note-drawer" id="labNoteDrawer" hidden>
+    <small>SPEAKER NOTE</small>
+    <p id="labNoteDrawerText"></p>
+  </div>
+
+  <div class="lab-error" id="labError" hidden></div>
+
+  <script src="./presentation-lab.js?v=0d04f2d07362"></script>
+</body>
+</html>

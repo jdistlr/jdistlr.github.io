@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Agentic Experience Platform — Concept Experience</title>
+  <meta
+    name="description"
+    content="A low-friction internal publishing model for humans and agents: publish fast, expire by default, graduate only when value is proven."
+  />
+  <link rel="preload" href="./fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="./tokens.css?v=0d04f2d07362" />
+  <link rel="stylesheet" href="./styles.css?v=0d04f2d07362" />
+  <meta name="aep-build" content="0d04f2d07362" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-full">Agentic Experience Platform</span><abbr class="brand-compact" title="Agentic Experience Platform">AEP</abbr>
+    </div>
+
+    <nav class="topbar-actions" aria-label="View controls">
+      <button class="mode-toggle" id="depthToggle" type="button" aria-pressed="false">
+        <span class="mode-dot" aria-hidden="true"></span>
+        <span id="depthLabel">Executive</span>
+      </button>
+      <button class="ghost-button" id="presentationToggle" type="button" aria-pressed="false">Story</button>
+      <div class="language-rail" role="group" aria-label="Language">
+        <button class="language-option" type="button" data-language="de" aria-pressed="false" aria-label="Deutsch">DE</button>
+        <span class="language-divider" aria-hidden="true"></span>
+        <button class="language-option" type="button" data-language="en" aria-pressed="true" aria-label="English">EN</button>
+      </div>
+      <a class="one-more-link" href="./nerdy.html" aria-label="One more thing: Nerd Shit Internals">
+        <span class="one-more-wide">one more thing…</span><span class="one-more-compact">···</span>
+      </a>
+    </nav>
+  </header>
+
+  <div class="story-indicator" id="storyIndicator" aria-live="polite">
+    <button type="button" id="storyPrev" class="story-nav" aria-label="Previous chapter">←</button>
+    <div class="story-meta">
+      <span id="storyCount">01 / 08</span>
+      <strong id="storyTitle">Problem</strong>
+      <div class="story-progress" aria-hidden="true"><i id="storyProgress"></i></div>
+    </div>
+    <button type="button" id="storyNext" class="story-nav" aria-label="Next chapter">→</button>
+  </div>
+
+  <main id="main">
+    <section class="hero section-shell" id="concept" data-story data-story-title="Problem">
+      <div class="eyebrow">Concept experience · v0.5</div>
+      <div class="hero-grid">
+        <div>
+          <h1>Software got fast.<br /><span>Enterprise delivery didn’t.</span></h1>
+          <p class="hero-lead">
+            Small internal software can now be created in minutes.
+            Publishing it safely still often triggers the machinery of a long-lived enterprise application.
+          </p>
+
+          <div class="hero-actions">
+            <a class="primary-link" href="#fast-lane">See the fast lane</a>
+            <a class="text-link" href="#under-the-hood">Under the hood</a>
+          </div>
+        </div>
+
+        <div class="contrast-panel" aria-label="Creation versus enterprise bootstrap">
+          <div class="contrast-row">
+            <div>
+              <div class="contrast-label">Create useful software</div>
+              <div class="contrast-caption">AI-assisted coding</div>
+            </div>
+            <div class="speed-meter short">
+              <span>minutes</span>
+            </div>
+          </div>
+
+          <div class="contrast-row">
+            <div>
+              <div class="contrast-label">Make it enterprise-reachable</div>
+              <div class="contrast-caption">identity · hosting · routing · lifecycle · governance</div>
+            </div>
+            <div class="speed-meter long">
+              <span>too much bootstrap</span>
+            </div>
+          </div>
+
+          <div class="panel-thesis">
+            <span>Question</span>
+            <strong>What if publishing became almost as cheap as creating?</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell" id="fast-lane" data-story data-story-title="Fast lane">
+      <div class="section-heading">
+        <div><div class="eyebrow">01 · The fast lane</div><h2>Local idea → protected internal URL</h2></div>
+        <p>One small intent. The platform absorbs the repeated enterprise bootstrap.</p>
+      </div>
+      <div class="diagram-panel diagram-scroll" data-diagram="publish">
+        <div class="diagram-panel-head"><span>Publish path</span><small>artifact → protected URL</small></div>
+        <div class="publish-canvas reveal-sequence" aria-label="Fast lane publish flow">
+          <article class="publish-node" data-reveal><span>01</span><strong>Build</strong><small>artifact or generated UI</small></article>
+          <div class="publish-edge"><i></i></div>
+          <article class="publish-node" data-reveal><span>02</span><strong>Package</strong><small>deployable artifact</small></article>
+          <div class="publish-edge"><i></i></div>
+          <article class="publish-node active" data-reveal><span>03</span><strong>Publish</strong><small>one governed action</small></article>
+          <div class="publish-edge"><i></i></div>
+          <article class="publish-node" data-reveal><span>04</span><strong>Protect</strong><small>identity · audience · isolation</small></article>
+          <div class="publish-edge"><i></i></div>
+          <article class="publish-node" data-reveal><span>05</span><strong>Return</strong><small>URL · owner · TTL</small></article>
+        </div>
+      </div>
+      <div class="publish-card publish-proof">
+        <div class="terminal" aria-label="Natural-language publish request and illustrative platform output">
+          <div class="terminal-bar"><span></span><span></span><span></span><b>publish intent</b></div>
+          <div class="terminal-body conversational-console">
+            <div class="terminal-prompt">› “Publish this app for my team for the next 30 days.”</div>
+            <div class="terminal-separator"></div>
+            <div class="console-line">✓ Team access is covered.</div>
+            <div class="console-line">✓ It will expire in 30 days.</div>
+            <div class="console-line">✓ Protected preview is ready.</div>
+            <div class="terminal-url">https://demo.apps.internal</div>
+          </div>
+        </div>
+        <div class="publish-copy">
+          <h3>Creator intent stays tiny.</h3>
+          <p>Who owns it? Who can see it? How long should it live? Infrastructure detail stays behind the platform boundary.</p>
+          <div class="nerd-only depth-block"><div class="depth-label">Nerd depth</div><p>CLI, MCP and portal should invoke the same deterministic publish action. The agent never needs raw production credentials.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell" id="actors" data-story data-story-title="Use cases">
+      <div class="section-heading compact-heading">
+        <div><div class="eyebrow">02 · Use-case view</div><h2>People ask. The platform does.</h2></div>
+        <p>The happy path is self-service. The platform operator should not sit in the middle.</p>
+      </div>
+      <div class="diagram-panel diagram-scroll" data-diagram="usecase">
+        <div class="diagram-panel-head"><span>Use-case diagram</span><small>actors → capabilities</small></div>
+<div class="usecase-associations" role="img" aria-label="Creators and coding agents publish, preview, extend or retire. Coding agents may compose experiences. Team users preview and share. Service owners promote and later validate or register."><div class="uc-association-row"><strong>creator</strong><div><span class="now">publish experience</span><span class="now">preview + share</span><span class="now">extend / retire</span></div></div><div class="uc-association-row"><strong>coding agent</strong><div><span class="now">publish experience</span><span class="now">preview + share</span><span class="now">extend / retire</span><span class="hypothesis"><small>Hypothesis</small>compose experience</span></div></div><div class="uc-association-row"><strong>team user</strong><div><span class="now">preview + share</span></div></div><div class="uc-association-row"><strong>service owner</strong><div><span class="hypothesis"><small>Hypothesis</small>promote</span><span class="later"><small>Later</small>validate / register</span></div></div><p>operator maintains the platform — routine publish / share / retire stays self-service</p></div>
+      </div>
+    </section>
+
+    <section class="section-shell" id="lifecycle" data-story data-story-title="Graduation map">
+      <div class="section-heading compact-heading">
+        <div><div class="eyebrow">03 · Graduation, not a conveyor belt</div><h2>Start small. Keep every outcome open.</h2></div>
+        <p>Stay, iterate, retire or graduate. Every stage can be a valid destination.</p>
+      </div>
+      <div class="diagram-panel diagram-scroll" data-diagram="graduation">
+        <div class="diagram-panel-head"><span>Activity / graduation map</span><small>yes / no / loop branches</small></div>
+<svg class="graduation-canvas" viewBox="0 0 1280 1000" role="img" aria-labelledby="gradTitle gradDesc"><title id="gradTitle">Non-linear graduation map</title><desc id="gradDesc">An idea can explore, retire, remain shared, remain operational, validate when needed, or become an enterprise service. Loops support iteration at each stage.</desc><defs><marker id="arrowNeutral" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" markerWidth="10" markerHeight="10" refX="10" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z"></path></marker><marker id="arrowLilac" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" markerWidth="10" markerHeight="10" refX="10" refY="5" orient="auto"><path class="grad-arrow-lilac" d="M0,0 L10,5 L0,10 z"></path></marker></defs>
+<path class="grad-branch" d="M320 170 H432" marker-end="url(#arrowNeutral)"></path>
+<path class="grad-branch" d="M608 170 H784" marker-end="url(#arrowNeutral)"></path>
+<text class="grad-branch-label" x="696" y="154">no</text>
+<path class="grad-branch" d="M520 234 V288 Q520 296 512 296 H288 Q280 296 280 304 V380" marker-end="url(#arrowNeutral)"></path>
+<text class="grad-branch-label" x="548" y="284">yes</text>
+<path class="grad-loop" d="M160 120 V96 Q160 88 168 88 H232 Q240 88 240 96 V120" marker-end="url(#arrowNeutral)"></path>
+<text class="grad-loop-label" x="200" y="74">iterate</text>
+<g class="grad-stage active" transform="translate(80 120)"><rect width="240" height="100" rx="16"></rect><text class="kicker" x="120" y="26">FAST LANE</text><text class="title" x="120" y="54">Explore</text><text class="sub" x="120" y="78">publish · learn</text></g>
+<g class="grad-decision" transform="translate(432 106)"><polygon points="88,0 176,64 88,128 0,64"></polygon><text x="88" y="58">recurring</text><text x="88" y="78">value?</text></g>
+<g class="grad-side" transform="translate(784 128)"><rect width="352" height="84" rx="14"></rect><text class="title" x="176" y="35">Retire</text><text class="sub" x="176" y="59">no recurring value</text></g>
+<path class="grad-branch" d="M320 430 H432" marker-end="url(#arrowNeutral)"></path>
+<path class="grad-branch" d="M608 430 H784" marker-end="url(#arrowNeutral)"></path>
+<text class="grad-branch-label" x="696" y="414">no</text>
+<path class="grad-branch" d="M520 494 V548 Q520 556 512 556 H288 Q280 556 280 564 V640" marker-end="url(#arrowNeutral)"></path>
+<text class="grad-branch-label" x="548" y="544">yes</text>
+<path class="grad-loop" d="M160 380 V356 Q160 348 168 348 H232 Q240 348 240 356 V380" marker-end="url(#arrowNeutral)"></path>
+<text class="grad-loop-label" x="200" y="334">improve</text>
+<g class="grad-stage " transform="translate(80 380)"><rect width="240" height="100" rx="16"></rect><text class="kicker" x="120" y="26">PERSIST</text><text class="title" x="120" y="54">Share</text><text class="sub" x="120" y="78">owner · audience</text></g>
+<g class="grad-decision" transform="translate(432 366)"><polygon points="88,0 176,64 88,128 0,64"></polygon><text x="88" y="58">operational</text><text x="88" y="78">dependency?</text></g>
+<g class="grad-side" transform="translate(784 388)"><rect width="352" height="84" rx="14"></rect><text class="title" x="176" y="35">Stay shared</text><text class="sub" x="176" y="59">useful, not operational</text></g>
+<path class="grad-branch" d="M320 690 H432" marker-end="url(#arrowNeutral)"></path>
+<path class="grad-branch" d="M608 690 H784" marker-end="url(#arrowNeutral)"></path>
+<text class="grad-branch-label" x="696" y="674">no</text>
+<path class="grad-branch" d="M520 754 V816" marker-end="url(#arrowNeutral)"></path>
+<text class="grad-branch-label" x="548" y="790">yes</text>
+<path class="grad-loop" d="M160 640 V616 Q160 608 168 608 H232 Q240 608 240 616 V640" marker-end="url(#arrowNeutral)"></path>
+<text class="grad-loop-label" x="200" y="594">change safely</text>
+<g class="grad-stage " transform="translate(80 640)"><rect width="240" height="100" rx="16"></rect><text class="kicker" x="120" y="26">OPERATE</text><text class="title" x="120" y="54">Operate</text><text class="sub" x="120" y="78">monitor · recover</text></g>
+<g class="grad-decision" transform="translate(432 626)"><polygon points="88,0 176,64 88,128 0,64"></polygon><text x="88" y="58">assurance</text><text x="88" y="78">required?</text></g>
+<g class="grad-side" transform="translate(784 648)"><rect width="352" height="84" rx="14"></rect><text class="title" x="176" y="35">Stay operational</text><text class="sub" x="176" y="59">assurance not required</text></g>
+<path class="grad-later" d="M640 848 H784" marker-end="url(#arrowNeutral)"></path>
+<text class="grad-branch-label" x="712" y="830">when ready</text>
+<path class="grad-loop hypothesis" d="M400 892 H368 Q360 892 360 884 V792 Q360 784 368 784 H432 Q440 784 440 792 V816" marker-end="url(#arrowNeutral)"></path>
+<text class="grad-loop-label" x="396" y="766">close gap</text>
+<g class="grad-stage hypothesis" transform="translate(400 816)"><rect width="240" height="100" rx="16"></rect><text class="kicker" x="120" y="26">CONDITIONAL</text><text class="title" x="120" y="54">Validate</text><text class="sub" x="120" y="78">evidence · gaps</text></g><g class="grad-stage later" transform="translate(784 816)"><rect width="352" height="100" rx="16"></rect><text class="kicker" x="176" y="26">DURABLE</text><text class="title" x="176" y="54">Enterprise</text><text class="sub" x="176" y="78">register · integrate</text></g></svg>
+        <div class="graduation-mobile" role="img" aria-label="Mobile lifecycle map. Explore can retire or continue to Share; Share can stay shared or continue to Operate; Operate can stay operational or continue to Validate when assurance is required; Validate can close gaps and lead to Enterprise.">
+          <article class="grad-mobile-stage active">
+            <small>FAST LANE</small>
+            <strong>Explore</strong>
+            <span>publish · learn · ↺ iterate</span>
+          </article>
+          <div class="grad-mobile-transition">
+            <span>recurring value?</span>
+            <div><em><b>no</b> Retire</em><em class="grad-mobile-next"><b>yes</b> continue ↓</em></div>
+          </div>
+
+          <article class="grad-mobile-stage">
+            <small>PERSIST</small>
+            <strong>Share</strong>
+            <span>owner · audience · ↺ improve</span>
+          </article>
+          <div class="grad-mobile-transition">
+            <span>operational dependency?</span>
+            <div><em><b>no</b> Stay shared</em><em class="grad-mobile-next"><b>yes</b> continue ↓</em></div>
+          </div>
+
+          <article class="grad-mobile-stage">
+            <small>OPERATE</small>
+            <strong>Operate</strong>
+            <span>monitor · recover · ↺ change safely</span>
+          </article>
+          <div class="grad-mobile-transition">
+            <span>assurance required?</span>
+            <div><em><b>no</b> Stay operational</em><em class="grad-mobile-next hypothesis"><b>yes</b> Validate ↓</em></div>
+          </div>
+
+          <article class="grad-mobile-stage hypothesis">
+            <small>CONDITIONAL</small>
+            <strong>Validate</strong>
+            <span>evidence · gaps · ↺ close gap</span>
+          </article>
+          <div class="grad-mobile-final-link" aria-hidden="true"><span>when ready</span><i></i></div>
+          <article class="grad-mobile-stage later">
+            <small>DURABLE</small>
+            <strong>Enterprise</strong>
+            <span>register · integrate</span>
+          </article>
+        </div>
+      </div>
+      <div class="graduation-thesis"><div><span>Speed rule</span><strong>Do not pay the next-stage tax until the next stage is real.</strong></div><div class="graduation-legend nerd-only"><span><i class="legend-active"></i> active / hypothesis</span><span><i class="legend-loop"></i> loop / stay</span><span><i class="legend-later"></i> conditional</span></div></div>
+      <div class="risk-rail nerd-only" data-reveal><div><span>Risk / authority applies at every stage</span><strong>data · write authority · exposure · impact</strong></div><div class="risk-scale" aria-hidden="true"><i></i></div><p><strong>Operational governance</strong> grows with maturity. <strong>Security governance</strong> is triggered immediately by risk.</p></div>
+    </section>
+
+    <section class="section-shell" id="agentic" data-story data-story-title="Agentic loop">
+      <div class="section-heading">
+        <div><div class="eyebrow">04 · Sequence view</div><h2>The agent shouldn’t learn the infrastructure.</h2></div>
+        <p>Intent in. Deterministic action out. A real preview comes back.</p>
+      </div>
+      <div class="diagram-panel diagram-scroll" data-diagram="sequence" tabindex="0" role="region" aria-labelledby="seqTitle">
+        <div class="diagram-panel-head"><span>Sequence diagram</span><small>human → agent → platform → preview</small></div>
+        <div class="sequence-canvas">
+          <svg class="sequence-svg" viewBox="0 0 1000 560" role="img" aria-labelledby="seqTitle seqDesc">
+            <title id="seqTitle">Agent publishing sequence diagram</title>
+            <desc id="seqDesc">Human asks an agent to publish; the agent invokes the platform; the platform deploys a preview, receives readiness, returns the result to the agent, and the agent returns it to the human.</desc>
+            <defs>
+              <marker id="seqArrow" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" markerWidth="10" markerHeight="10" refX="10" refY="5" orient="auto">
+                <path d="M0,0 L10,5 L0,10 z"></path>
+              </marker>
+              <marker id="seqArrowLilac" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" markerWidth="10" markerHeight="10" refX="10" refY="5" orient="auto">
+                <path class="seq-arrow-lilac" d="M0,0 L10,5 L0,10 z"></path>
+              </marker>
+            </defs>
+
+            <g class="seq-participant"><rect x="70" y="28" width="170" height="52" rx="26"></rect><text x="155" y="61">Human</text></g>
+            <g class="seq-participant"><rect x="300" y="28" width="170" height="52" rx="26"></rect><text x="385" y="61">Agent</text></g>
+            <g class="seq-participant active"><rect x="530" y="28" width="170" height="52" rx="26"></rect><text x="615" y="61">Platform</text></g>
+            <g class="seq-participant"><rect x="760" y="28" width="170" height="52" rx="26"></rect><text x="845" y="61">Preview</text></g>
+
+            <path class="seq-lifeline" d="M155 80V520"></path>
+            <path class="seq-lifeline" d="M385 80V520"></path>
+            <path class="seq-lifeline" d="M615 80V520"></path>
+            <path class="seq-lifeline" d="M845 80V520"></path>
+
+            <path class="seq-call" d="M155 155H385" marker-end="url(#seqArrow)"></path>
+            <text class="seq-label" x="270" y="142">publish for my team · 30d</text>
+
+            <path class="seq-call active" d="M385 245H605" marker-end="url(#seqArrowLilac)"></path>
+            <text class="seq-label active" x="500" y="232">publish intent</text>
+
+            <rect class="seq-activation-svg" x="605" y="220" width="20" height="204" rx="7"></rect>
+            <text class="seq-activation-label" x="640" y="284">policy</text><text class="seq-activation-label" x="640" y="302">deterministic action</text>
+
+            <path class="seq-call active" d="M625 350H845" marker-end="url(#seqArrowLilac)"></path>
+            <text class="seq-label active" x="730" y="337">deploy preview</text>
+
+            <path class="seq-return" d="M845 410H625" marker-end="url(#seqArrow)"></path>
+            <text class="seq-label" x="730" y="397">preview ready</text>
+
+            <path class="seq-return" d="M615 465H385" marker-end="url(#seqArrow)"></path>
+            <text class="seq-label" x="500" y="452">URL · lifetime · status</text>
+
+            <path class="seq-return" d="M385 505H155" marker-end="url(#seqArrow)"></path>
+            <text class="seq-label" x="270" y="492">result returned</text>
+          </svg>
+        </div>
+      </div>
+      <div class="terminal agent-console" aria-label="Illustrative machine-facing action">
+        <div class="terminal-bar"><span></span><span></span><span></span><b>platform action</b></div>
+        <div class="terminal-body conversational-console">
+          <div class="terminal-prompt">› Publish the current preview.</div>
+          <div class="terminal-separator"></div>
+          <div class="console-line">✓ Access rules applied.</div>
+          <div class="console-line">✓ Preview published.</div>
+          <div class="console-line">✓ Result returned to the agent.</div>
+        </div>
+      </div>
+      <div class="reference-row nerd-only">
+        <article><div class="reference-name">Cloudflare Internal Sites</div><p><strong>Steal:</strong> trivial authenticated publishing.</p></article>
+        <article><div class="reference-name">Dokku</div><p><strong>Steal:</strong> tiny deployment mental model.</p></article>
+        <article><div class="reference-name">VibeSDK</div><p><strong>Steal:</strong> agent ↔ preview ↔ verify loop.</p></article>
+      </div>
+    </section>
+
+    <section class="section-shell" id="success" data-story data-story-title="Success without reset">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">05 · Success without reset</div>
+          <h2>When the tiny app becomes important, don’t start over.</h2>
+        </div>
+        <p>Success can make software deeper or broader. Those are different moves.</p>
+      </div>
+
+      <div class="two-axis">
+        <article class="axis-card">
+          <div class="axis-kicker">Maturity</div>
+          <h3>More assurance</h3>
+          <div class="axis-line">
+            <span>Explore</span>
+            <span>Share</span>
+            <span>Operate</span>
+            <span>Validate</span>
+            <span>Enterprise</span>
+          </div>
+          <p class="axis-caption">More assurance when policy, risk or business context requires it.</p>
+          <div class="nerd-only depth-block">
+            <div class="depth-label">Evidence continuity</div>
+            <p>
+              Source history, ownership, deployments, dependencies, access configuration and automated tests become inputs to formal assurance instead of being recreated manually.
+            </p>
+          </div>
+        </article>
+
+        <article class="axis-card">
+          <div class="axis-kicker">Experience scope</div>
+          <h3>More composition</h3>
+          <div class="axis-line">
+            <span>Isolated</span>
+            <span>Shared</span>
+            <span>Composed</span>
+            <span>Enterprise experience</span>
+          </div>
+          <p class="axis-caption">More coherence when user journeys cross app boundaries.</p>
+          <div class="nerd-only depth-block">
+            <div class="depth-label">Important distinction</div>
+            <p>
+              A developer portal and a composed business experience solve different problems, even if they share some technical primitives.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell" id="under-the-hood" data-story data-story-title="Under the hood">
+      <div class="section-heading">
+        <div><div class="eyebrow">06 · Component view</div><h2>A thin seam, not a new infrastructure empire.</h2></div>
+        <p>Own the contract. Reuse the commodity layers.<br /><a class="inline-architecture-link" href="./architecture.html">Explore reference architecture →</a></p>
+      </div>
+      <div class="diagram-panel diagram-scroll" data-diagram="component">
+        <div class="diagram-panel-head"><span>Component diagram</span><small>responsibility boundary</small></div>
+        <div class="component-canvas" aria-label="Component diagram of the thin platform seam">
+          <div class="component-node creator"><span class="component-glyph"></span><small>CLIENTS</small><strong>Human · Agent · Automation</strong></div>
+          <div class="component-edge"><span>publish intent</span><i></i></div>
+          <div class="component-node contract active extrude extrude-own"><span class="component-glyph"></span><small>THIN CONTRACT</small><strong>owner · audience · lifetime · deployableArtifact</strong></div>
+          <div class="component-edge"><span>deterministic action</span><i></i></div>
+          <div class="component-cluster">
+            <div class="cluster-label">PLATFORM RESPONSIBILITY</div>
+            <div class="component-node own extrude extrude-own"><span class="component-glyph"></span><small>CONTROL</small><strong>identity · routing · lifecycle · metadata</strong></div>
+            <div class="component-node adapt extrude extrude-adapt"><span class="component-glyph"></span><small>DELIVERY</small><strong>static artifact serving</strong></div>
+            <div class="component-node later"><span class="component-glyph"></span><small>ESCALATION</small><strong>runtime · state · capabilities</strong></div>
+          </div>
+        </div>
+      </div>
+      <div class="isolation-panel nerd-only" data-reveal>
+        <div><div class="eyebrow">Security boundary</div><h3>Independent experiences need independent trust.</h3><p>Origin separation is a security primitive for independently authored active web content.</p></div>
+        <div class="isolation-code"><div class="bad"><span>shared origin</span><code>apps.example/a<br>apps.example/b</code></div><div class="isolation-arrow">→</div><div class="good"><span>isolated origins</span><code>a.apps.example<br>b.apps.example</code></div></div>
+      </div>
+      <div class="dogfood-note nerd-only"><strong>Dogfooding scope today:</strong> static delivery · repository source · automated Pages deployment · portable artifact.<span>Not yet proven here: enterprise SSO · TTL enforcement · owner policy · agent publishing · graduation.</span></div>
+    </section>
+
+    <section class="section-shell closing" id="closing" data-story data-story-title="Working hypothesis">
+      <div class="eyebrow">The working hypothesis</div>
+      <h2>Make the first publish almost boring.</h2>
+      <p>
+        Then let successful software earn more runtime, more governance and more enterprise integration — without forcing the creator to pay for all of it on day one.
+      </p>
+
+      <div class="closing-thesis">
+        Build freely. <span>Reuse intelligently.</span> Publish safely. <span>Graduate deliberately.</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Concept experience v0.5 · source of truth remains the repository · <a href="./design.html">design grammar</a></span>
+    <span><kbd>N</kbd> depth · <kbd>P</kbd> story mode · <kbd>←</kbd><kbd>→</kbd> chapters · <kbd>G</kbd> grid</span>
+  </footer>
+
+  <script src="./i18n.js?v=0d04f2d07362"></script>
+  <script src="./app.js?v=0d04f2d07362"></script>
+  <script src="./spec-grid.js?v=0d04f2d07362"></script>
+</body>
+</html>

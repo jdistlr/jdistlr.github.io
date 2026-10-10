@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Nerd Shit Internals — Agentic Experience Platform</title>
+  <meta name="description" content="Die kollegiale Innensicht auf die Fast-Lane-Idee: weniger Enterprise-Bootstrap, mehr echtes Ausprobieren." />
+  <link rel="preload" href="./fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="./tokens.css?v=0d04f2d07362" />
+  <link rel="stylesheet" href="./styles.css?v=0d04f2d07362" />
+  <meta name="aep-build" content="0d04f2d07362" />
+</head>
+<body class="nerdy-page">
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-full">Agentic Experience Platform</span><abbr class="brand-compact" title="Agentic Experience Platform">AEP</abbr>
+    </div>
+    <nav class="topbar-actions" aria-label="Navigation">
+      <a class="nerdy-back" href="./index.html">← zurück zur seriösen Version</a>
+    </nav>
+  </header>
+
+  <main class="nerdy-shell">
+    <section class="nerdy-hero">
+      <div class="nerdy-kicker">one more thing · internals</div>
+      <h1>Nerd Shit<br />Internals.</h1>
+      <p class="nerdy-lead">
+        Warum wir nicht jede gute Idee erst einmal durch den kompletten Enterprise-Fleischwolf drehen sollten,
+        nur damit am Ende irgendwo ein verdammter Link herausfällt.
+      </p>
+    </section>
+
+    <section class="nerdy-section">
+      <div class="nerdy-kicker">Der eigentlich lächerlich simple Wunsch</div>
+      <h2>„Publizier mir das Ding einfach.“</h2>
+      <p>
+        Nicht „beantrage mir eine Infrastruktur“. Nicht „erfinde mir ein Betriebsmodell“.
+        Einfach: nimm das Artefakt, gib ihm eine sichere interne Adresse, begrenze Zielgruppe und Lebenszeit — fertig.
+      </p>
+
+      <div class="nerdy-prompt">
+        <div class="prompt-bubble">
+          Bitte publiziere mir diese App für mein Team für die nächsten 30 Tage.
+        </div>
+
+        <div class="terminal nerdy-console" aria-label="Gefakter Plattform-Output für einen natürlichen Publish-Prompt">
+          <div class="terminal-bar"><span></span><span></span><span></span><b>intent → platform action</b></div>
+          <div class="terminal-body conversational-console">
+            <div class="console-line">✓ Verstanden: fürs Team.</div>
+            <div class="console-line">✓ Laufzeit: 30 Tage.</div>
+            <div class="console-line">✓ Zugriff und Schutz sind gesetzt.</div>
+            <div class="console-line">✓ Preview ist live.</div>
+            <div class="terminal-url">https://demo.apps.internal</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nerdy-verdict">
+        Kein Cluster-Ticket. Kein SSO-Basteln pro App. Kein zeremonielles YAML als Eintrittskarte zum Ausprobieren.
+      </div>
+    </section>
+
+    <section class="nerdy-section">
+      <div class="nerdy-kicker">Warum das hart relevant ist</div>
+      <h2>Software ist plötzlich billig. Unser Bootstrap-Zirkus nicht.</h2>
+      <p>
+        Wir können heute mit Menschen und Coding Agents Dinge absurd schnell ausprobieren.
+        Wenn danach das Bereitstellen länger dauert als das Bauen, optimieren wir exakt den falschen Teil der Wertschöpfung.
+      </p>
+
+      <div class="fastlane-compare">
+        <article class="compare-lane">
+          <div class="eyebrow">Der Reflex</div>
+          <h3>Erst Enterprise. Vielleicht später Nutzen.</h3>
+          <ol>
+            <li>Idee</li>
+            <li>Hosting-Frage</li>
+            <li>Identity-Frage</li>
+            <li>Routing / Zertifikat</li>
+            <li>Betriebsmodell</li>
+            <li>Governance-Ritual</li>
+            <li>Ach ja: benutzt das überhaupt jemand?</li>
+          </ol>
+        </article>
+
+        <article class="compare-lane fast">
+          <div class="eyebrow">Die Fast Lane</div>
+          <h3>Erst Nutzen. Enterprise nur wenn nötig.</h3>
+          <ol>
+            <li>Idee</li>
+            <li>Publish</li>
+            <li>SSO / Audience / TTL sind schon gelöst</li>
+            <li>Menschen benutzen es — oder eben nicht</li>
+            <li>Retire, stay, iterate oder graduieren</li>
+          </ol>
+        </article>
+      </div>
+    </section>
+
+    <section class="nerdy-section">
+      <div class="nerdy-kicker">Elephants in the Room</div>
+      <h2>Die üblichen Sätze, bei denen ein Prototyp spontan drei Quartale älter wird.</h2>
+
+      <div class="elephants">
+        <article class="elephant-card">
+          <span>01</span>
+          <h3>„Aber was, wenn das später business critical wird?“</h3>
+          <p>
+            Dann behandeln wir es später business critical. Genau dafür gibt es Graduation.
+            Erfolg ist ein Trigger für mehr Betriebsreife — kein Grund, jeden Versuch von Tag eins an wie ein Kernsystem zu behandeln.
+          </p>
+        </article>
+
+        <article class="elephant-card">
+          <span>02</span>
+          <h3>„Dafür brauchen wir erst ein vollständiges Betriebsmodell.“</h3>
+          <p>
+            Für einen langlebigen operativen Service: ja. Für eine 30-Tage-Experience zum Prüfen einer Idee:
+            vielleicht erstmal einen Link, einen Owner und ein Ablaufdatum.
+          </p>
+        </article>
+
+        <article class="elephant-card">
+          <span>03</span>
+          <h3>„Sollten wir das nicht gleich auf Kubernetes bauen?“</h3>
+          <p>
+            Wenn das Problem „HTML sicher erreichbar machen“ heißt, ist ein Cluster noch keine Produktstrategie.
+            Runtime-Komplexität darf dazukommen, sobald ein echter Runtime-Bedarf auftaucht.
+          </p>
+        </article>
+
+        <article class="elephant-card">
+          <span>04</span>
+          <h3>„Und Governance?“</h3>
+          <p>
+            Unbedingt. Nur bitte an der richtigen Stelle. Risiko gilt sofort.
+            Operative Bürokratie wächst mit echter Persistenz und Abhängigkeit — nicht mit der Existenz einer <code>index.html</code>.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="nerdy-section">
+      <div class="nerdy-kicker">Kein AI-Zaubertrick</div>
+      <h2>Der Agent darf fragen. Die Plattform muss langweilig deterministisch bleiben.</h2>
+      <p>
+        Der interessante Teil ist nicht, dass irgendein LLM Shell-Kommandos improvisiert.
+        Der interessante Teil ist, dass Mensch, Agent, CLI und Portal denselben kleinen, kontrollierten Plattformvertrag benutzen.
+      </p>
+
+      <div class="diagram-panel diagram-scroll">
+        <div class="diagram-panel-head"><span>Der boring core</span><small>scroll →</small></div>
+        <div class="component-canvas">
+          <div class="component-node creator"><span class="component-glyph"></span><small>INTENT</small><strong>Mensch · Agent · Automation</strong></div>
+          <div class="component-edge"><span>„publish für 30 Tage“</span><i></i></div>
+          <div class="component-node contract active"><span class="component-glyph"></span><small>PLATFORM ACTION</small><strong>owner · audience · TTL · artifact</strong></div>
+          <div class="component-edge"><span>policy + execute</span><i></i></div>
+          <div class="component-cluster">
+            <div class="cluster-label">BORING, ABER WICHTIG</div>
+            <div class="component-node"><span class="component-glyph"></span><small>IDENTITY</small><strong>zentral geerbt</strong></div>
+            <div class="component-node"><span class="component-glyph"></span><small>DELIVERY</small><strong>URL + Isolation</strong></div>
+            <div class="component-node later"><span class="component-glyph"></span><small>LIFECYCLE</small><strong>expire · stay · graduate</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="nerdy-section">
+      <div class="nerdy-kicker">Der eigentliche Trick</div>
+      <h2>Wir schaffen Enterprise Engineering nicht ab. Wir hören nur auf, es jedem Experiment vorsorglich über den Kopf zu kippen.</h2>
+      <p>
+        Die Plattform löst den wiederkehrenden langweiligen Kram einmal sauber und geht dann aus dem Weg.
+        Wenn aus dem nerdy shit plötzlich etwas verdammt Nützliches wird, darf es erwachsen werden —
+        mit Ownership, Betrieb, Evidenz, Assurance und den bestehenden Enterprise-Systemen.
+      </p>
+
+      <div class="closing-thesis">
+        Schnell anfangen. <span>Sauber begrenzen.</span> Nutzen beweisen. <span>Erst dann erwachsen werden.</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer nerdy-shell">
+    <span>Nerd Shit Internals · bewusst nicht die offizielle Executive-Erzählung</span>
+    <a class="nerdy-back" href="./index.html">zurück zur Concept Experience →</a>
+  </footer>
+  <script src="./spec-grid.js?v=0d04f2d07362"></script>
+</body>
+</html>
